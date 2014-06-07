@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Keywords" content="Spiegel, Free Software, Becky! 2, Plug-in, GnuPG, BkGnuPG, Manual">
+<meta name="author" content="Yasuhiro ARAKAWA">
+<meta name="Description" content="GNU Privacy Guard Plug-in for Becky! 2">
+<link rev="made" href="mailto:spiegel@alles.or.jp">
+<link rel="contents" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html">
+<link rel="next" href="tips_en.hrml">
+<link rel="prev" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html">
+<title>Manual - GNU Privacy Guard Plug-in for Becky! 2</title>
+</head>
+
+
+<body bgcolor="#ffffdd" text="#000000" link="blue" alink="red" vlink="navy">
+<div><a href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html">Download</a> | <a href="tips_en.html">Tips</a></div>
+<hr>
+<div align="right">
+BkGnuPG Version 1.0.4<br>
+Copyright &copy; 2000-2003 <a href="mailto:spiegel@alles.or.jp">Yasuhiro ARAKAWA</a>
+</div>
+<h1 align="center">GNU Privacy Guard Plug-in for Becky! 2<br>MANUAL</h1>
+<p align="center"><a href="index.html">Japanese</a> | <a href="index_en.html">English</a></p>
+
+
+<h2>About "GNU Privacy Guard Plug-in for Becky! 2"</h2>
+<p>
+<em>GNU Privacy Guard Plug-in</em> (BkGnuPG) is the plug-in software to be used with
+<em><a href="http://www.rimarts.co.jp/becky.htm">Becky! Internet Mail Ver. 2</a></em> (B2).
+By using <em><A href="http://www.gnupg.org/">GNU Privacy Guard</A></em> (GnuPG)
+you can sign or encrypt your e-mail message.
+Also it can verify or decrypt incoming e-mail
+that was encrypted or signed by <em><a href="http://www.pgpi.org/">Pretty Good Privacy</a></em> (PGP) or GnuPG.
+</p><p>
+There is a <em>Becky PGP plug-in</em> (BkPGP) that comes with B2,
+but almost everything you can do through PGP can be done by GnuPG,
+and GnuPG supports functions not yet supported by PGP.
+</p><p>
+BkGnuPG is free software.
+For further information about the copyright of BkGnuPG,
+please refer to <EM>BkGnuPG\readme_en.txt</EM> that comes in the BkGnuPG zip file.
+And please refer to
+<a href="tips_en.html">"Tips - encryption mail"</a>
+about tips of using BkGnuPG.
+</p>
+
+
+<h2>Environment</h2>
+<p>
+Besides I am using confirmation only in the following platform,
+because there is not developmental environment,
+although I think that it has no problem if B2 and Win32 version GnuPG are using.
+</p><ul>
+<li>Windows NT Service Pack 6a (Japanese version)
+<li>Windows 2000 Professional Service Pack 1 (Japanese version)
+</ul><p>
+In the case that I am not able to use it well in the platform other than the above
+Please report situation (OS of the kind/versions, errors of OS and application, etc.) as in detail as possible.
+Please refer to it <a href="#support">"Support about"</a> about the address of the author.
+</p>
+
+
+<h2>Installation and uninstallation method</h2>
+<p>
+Please confirm that the installation of B2 and GnuPG are completing first of all.
+I recommend that does the following setting about GnuPG, especially.
+</p><ul>
+<li>PATH is set up to the folder that module (gpg.exe) is implementation.
+<li>GnuPG home directory is set up.
+</ul><p>
+Please see the <em>README.W32</em> file that comes in the GnuPG zip file
+about these setting method.
+</p><p>
+Next please download the latest version of BkGnuPG from the following URL.
+</p><blockquote>
+BkGnuPG download page:
+<a href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html">http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html</a>
+</blockquote><p>
+When the file where I downloaded is extracted the following file is
+able to take out it.
+</p><ul>
+<li>BkGnuPG load module (DLL file)
+<li>BkGnuPG source code file (zip compression)
+<li>README file (BkGnuPG\readme_en.txt, BkGnuPG\readme_sjis.txt)
+<li>Manual (this file)
+</ul><p>
+You copy <em>BkGnuPG.dll</em> of these files to the "PlugIns" folder
+that is in a B2 installation folder or data folder, to install BkGnuPG.
+please do this operation in B2 condition without being acting.
+</p><p>
+The uninstallation is completion if you delete the DLL file where copied.
+Please delete even this, if there is <em>BkGnuPG.ini</em>.
+Please refer to <a href="#inifile">"INI file specification"</a> about the place of <em>BkGnuPG.ini</em>.
+</p>
+
+
+<h2>Facilities</h2>
+
+<h3><a name="SettingDlg">"Settings" dialog</a></h3>
+<p>
+Please start B2 if installation completes.
+It may will confirm whether I register BkGnuPG in the case that I installed it for the first time.
+The <em>"Setting dialog"</em> can be opened from the <em>"Tools"</em> menu
+if installation is completing correctly.
+</p>
+<div align="center"><img src="settingdlg_en.png" width="341" height="351" alt="Settings dialog"></div>
+<div align="center"><kbd>[Tools]</kbd> menu &gt;&gt; <kbd>[Plug-ins Setup]</kbd> item &gt;&gt; <kbd>[GNU Privacy Gard Plug-in]</kbd> item</div>
+<p>
+The explanation of items of the Settings dialog is as the following.
+</p><dl>
+<dt><strong>Default User ID</strong></dt>
+<dd>
+Default ID is set up if there are 2 or more secret keys.
+</dd>
+<dt><strong>PGP compatible</strong></dt>
+<dd>
+BkGnuPG encrypts or sign a mail message with a PGP compatible format.
+It may fail if I do not check this item, especially to the signature verification by PGP.
+Please refer to
+<a href="tips_en.html#compatible">"Exchangeability of GnuPG and PGP"</a>
+of Tips page about the exchangeability between GnuPG and PGP.
+</dd>
+<dt><strong>Try tobe more RFC1991 (PGP 2.6.x) compliant</strong></dt>
+<dd>
+BkGnuPG encrypts or sign a mail message with the standard of PGP 2.6.x (<a href="http://www.rfc-editor.org/rfc/rfc1991.txt">RFC1991</a>).
+Please check and please combine even this item,
+in the case that it does not go well even if I check the <em>"PGP compatible"</em> item.
+</dd>
+<dt><strong>OpenPGP behavior</strong></dt>
+<dd>
+BkGnuPG does the processing of the signature and encryption that conformed to OpenPGP (<a href="http://www.gnupg.org/rfc2440.html">RFC2440</a>).
+This item is not able to set up it at the same time as <em>"PGP compatible"</em> item and <em>"Try tobe more RFC1991 (PGP 2.6.x) compliant"</em> item.
+A recipient may not be able to decrypt or verify a mail message with PGP, that you check this item.
+</dd>
+<dt><strong>Anonymous recipients</strong></dt>
+<dd>
+When you check this item you are able to conceal the recipients information that is included to encryption packet.
+(Yet, I am not able to conceal the number of recipients even if it checks this item.)
+This item is not able to set up it at the same time as <em>"PGP compatible"</em> item and <em>"Try tobe more RFC1991 (PGP 2.6.x) compliant"</em> item.
+A recipient can not be able to decrypt a mail message with PGP, that you check this item.
+</dd>
+<dt><strong>PGP/MIME (RFC2015) content type</strong></dt>
+<dd>
+BkGnuPG makes a signature or encryption message with PGP/MIME  (<a href="http://www.rfc-editor.org/rfc/rfc2015.txt">RFC2015</a>) format.
+</dd>
+<dt><strong>Use message digest algorithm MD5</strong></dt>
+<dd>
+When you check this item the message digest algorithm that BkGnuPG spends on a signature is set up to MD5.
+In the case that it does not check it (default) BkGnuPG uses SHA-1.
+This item is not able to set up it at the same time as <em>"OpenPGP behavior"</em> item.
+Usually, You <a href="tips_en.html#md5">SHOULD NOT</a> check this item.
+</dd>
+<dt><strong>Encrypt with public keys of Cc recipients</strong></dt>
+<dd>
+Even the address of <em>Cc</em> adds it, to the recipient listing of the encryption other than the address of <em>To</em>.
+</dd>
+<dt><strong>Encrypt with public keys of Bcc recipients</strong></dt>
+<dd>
+Even the address of <em>Bcc</em> adds it, to the recipient listing of the encryption other than the address of <em>To</em>.
+Usually, You <a href="tips_en.html#bcc">SHOULD NOT</a> check this item.
+</dd>
+<dt><strong>Encrypt with public keys of From recipients</strong></dt>
+<dd>
+Even the address of <em>From</em> adds it, to the recipient listing of the encryption other than the address of <em>To</em>.
+</dd>
+<dt><strong>Encrypt with public keys of Default user</strong></dt>
+<dd>
+Even <em>default user ID</em> (Item that I explained before) adds it, to the recipient listing of the encryption other than the address of <em>To</em>.
+</dd>
+</dl><p>
+When you push <kbd>[OK]</kbd> button the setting is reflected and write setting information in the <a href="#inifile">INI file</a>.
+</p>
+
+<h3>Encrypt mail</h3>
+<p>
+Please select <kbd>[GnuPG: Encrypt...]</kbd> item from the <em>Tools</em> menu of the composing window, to encrypt the message that you made.
+<em>"Recipients dialog"</em> triggers it.
+</p>
+<div align="center"><img src="rusersdlg_en.png" width="485" height="162" alt="Recipients dialog"></div>
+<p>
+The mail address that was set up in <em>To</em> field to <em>"Recipients dialog"</em> previously is listed.
+
+Even the mail address that is set up in the field where corresponds is listed to Recipients dialog,
+in the case that "Encrypt with public keys of Cc recipients" item etc. are checked with Settings dialog.
+</p><p>
+You edit the listing of recipients with this dialog and push <kbd>[OK]</kbd> button.
+Please push <kbd>[Cancel]</kbd> button in case that you want to stop operation.
+</p><p>
+When you push <kbd>[Setup...]</kbd> button <em>"Settings dialog"</em> triggers it.
+You can change setting temporarily here.
+(It is not reflected in the <a href="#inifile">INI file</a>.)
+</p><p>
+The contents of the composing window are encrypted if the result is displayed and the processing succeed when the encryption processing ends.
+</p>
+
+<h3>Sign mail</h3>
+<p>
+Please select <kbd>[GnuPG: Sign...]</kbd> from the <em>Tools</em> menu, to sign the message that you made with the composing window.
+<em>"Passphrase dialog"</em> triggers it.
+</p>
+<div align="center"><img src="passphrasedlg_en.png" width="550" height="138" alt="Passphrase dialog"></div>
+<p>
+The mail address that was set up in <em>From</em> field to <em>"Passphrase dialog"</em> previously is listed.
+The signature user can change it.
+</p><p>
+You input Passphrase and please push <kbd>[OK]</kbd> button.
+Please push <kbd>[Cancel]</kbd> button in case that you want to stop operation.
+</p><p>
+When you push <kbd>[Setup...]</kbd> button <em>"Settings dialog"</em> triggers it.
+You can change setting temporarily here.
+(It is not reflected in the <a href="#inifile">INI file</a>.)
+</p><p>
+The explanation of items of the Passphrase dialog is as the following.
+</p><dl>
+<dt><strong>Show Passphrase</strong></dt>
+<dd>
+Showing Passphrase text.
+</dd>
+<dt><strong>Use Agent</strong></dt>
+<dd>
+Enabling --use-agent option.
+(use it with <em>"gpg-agent.exe"</em> that is included to <a href="http://winpt.sourceforge.net/">WinPT</a> Tray.)
+</dd>
+</dl><p>
+The signature information is added to a message if the result is displayed and the processing succeed when the signature processing ends.
+</p>
+
+<h3>Sign and Encrypt</h3>
+<p>
+BkGnuPG can do the signature and encryption to a message at a time.
+Please select <kbd>[GnuPG: Sign And Encrypt...]</kbd> from the <em>Tools</em> menu.
+First <em>"Recipients dialog"</em> triggers and consecutively <em>"Passphrase dialog"</em> trigger.
+The contents of the composing window are signed and encrypted if the result is displayed and the processing succeed when the processing ends.
+</p>
+
+<h3>Attach public key</h3>
+<p>
+BkGnuPG can attach the public key of yourself to mail.
+Please select <kbd>[GnuPG: Attach Public Key...]</kbd> from the <em>Tools</em> menu.
+</p>
+
+<h3>Decrypt and verify</h3>
+<p>
+Please select <kbd>[GnuPG: Decrypt And Verify...]</kbd> from the <em>Tools</em> menu of main window.
+(It is able to select it even from the context menu of the ListView window.
+<em>"Passphrase dialog"</em> triggers it in the case of decryption.
+</p>
+<div align="center"><img src="passphrasedlg2_en.png" width="550" height="138" alt="Passphrase dialog (for decryption)"></div>
+<p>
+The contents are reflected to the message view window if the result, is displayed and succeed when the processing ends.
+</p>
+
+
+<H2><a name="support">Support about</a></H2>
+<p>
+Please contact  The author of the plug-in at the following  e-mail address:
+</p><blockquote>
+<kbd><a href="mailto:spiegel@alles.or.jp">spiegel@alles.or.jp</a></kbd>
+</blockquote><p>
+Although I am not able to respond to all requests,
+I shall do my best, but as English is not might first language,
+there may be some delay.  Please forgive me in advance.
+</p>
+
+
+<h2>Advanced usage</h2>
+
+<h3>Between the option of GnuPG and the item of Settings dialog</h3>
+<p>
+The correspondence between the option of GnuPG and the item of <a href="#SettingDlg">"Settings dialog"</a> are as the following.
+</p><table>
+<tr><td align="right"><kbd>--default-key</kbd></td><td>:</td><td>Default user ID</td></tr>
+<tr><td align="right"><kbd>--force-v3-sigs</kbd></td><td>:</td><td>PGP compatible</td></tr>
+<tr><td align="right"><kbd>--rfc1991</kbd></td><td>:</td><td>Try to be more RFC1991 (PGP 2.6.x) compliant</td></tr>
+<tr><td align="right"><kbd>--openpgp</kbd></td><td>:</td><td>OpenPGP behavior</td></tr>
+<tr><td align="right"><kbd>--throw-keyid</kbd></td><td>:</td><td>Anonymous recipients</td></tr>
+<tr><td align="right"><kbd>--digest-algo MD5</kbd></td><td>:</td><td>Use message digest algorithm MD5</td></tr>
+</table><p>
+(Message digest algorithm of the default is SHA-1.)
+</p><p>
+The option of GnuPG that is not able to set up it with Settings dialog is able to set up it in an <a href="tips_en.html#optfile">options file</a>.
+</p>
+
+<h3><a name="inifile">INI file specification</a></h3>
+<p>
+The setting of BkGnuPG is set in all the INI files <em>"BkGnuPG.ini"</em>.
+The specification of the INI file were summarized to <em><a href="bkgnupg_ini_en.txt">bkgnupg_ini_en.txt</a></em>.
+(<em><a href="bkgnupg_ini_en.txt">bkgnupg_ini_en.txt</a></em> changes a name to <em>BkGnuPG.ini</em> and able to use as INI file as it is.)
+</p><p>
+There are Facilities that we are not able to set up with <em>"Settings dialog"</em> with a Facility without using much.
+</p>
+<ul>
+<li>GnuPG command name (path name)
+<li>Character set of <em>"Output dialog"</em> (for Japanese)
+<li><a href="#log">Trace log</a>
+</ul>
+<p>
+BkGnuPG searches INI file with the following turn at the time of the start.
+</p><ol>
+<li>"PlugIns" the folder of data folder right under
+<li>GnuPG home directory (In the case that it is set up with registry)
+<li>Current directory of BkGnuPG
+</ol><p>
+For in the case that there is not INI file in above which I make INI file for the current directory of BkGnuPG.
+Also, please see the <em>README.W32</em> file where is in GnuPG zip file about the setting method of GnuPG home directory.
+</p><p>
+Please confirm that B2 is ending without fail, in the case that INI file is edited directly.
+BkGnuPG refers to INI file only at the time of the start.
+Even if INI file is edited during the B2 action it is not reflected to BkGnuPG in the action.
+</p>
+
+<h3><a name="log">Trace log</a></h3>
+<p>
+BkGnuPG can take a tracing log.
+(It sets up it in <a href="#inifile">INI file</a>)
+The command line information of GnuPG and error information are written to a tracing log.
+Please use it to the report to the author, in the case that there was a trouble with BkGnuPG.
+Usually please turn off a tracing log.
+</p>
+
+
+<hr>
+<div align="right">
+Please contact to
+<em><a href="mailto:spiegel@alles.or.jp">spiegel@alles.or.jp</a></em>
+if you wish to comment on this page.
+</div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Keywords" content="Spiegel, Free Software, Becky! 2, Plug-in, GnuPG, BkGnuPG, Tips">
+<meta name="author" content="Yasuhiro ARAKAWA">
+<link rev="made" href="mailto:spiegel@alles.or.jp">
+<link rel="contents" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index_en.html">
+<!-- link rel="next" href="" -->
+<link rel="prev" href="index_en.html">
+<title>Tips - GNU Privacy Guard Plug-in for Becky! 2</title>
+</head>
+
+
+<body bgcolor="#ffffdd" text="#000000" link="blue" alink="red" vlink="navy">
+<a href="index_en.html">MANUAL</a>
+<hr>
+<div align="right">
+Copyright &copy; 2000 <a href="mailto:spiegel@alles.or.jp">Yasuhiro ARAKAWA</a>
+</div>
+<h1>Tips - Encryption mail</h1>
+<p>
+I think that I want to be going to introduce it as long as I think of such a tips that carries out the sending and receiving of encryption mail
+by using
+<em><a href="http://www.rimarts.co.jp/becky.htm">Becky! Internet Mail Ver.2</a></em> (B2)
+and
+<em><a href="http://www.gnupg.org/">GNU Privacy Guard</a></em> (GnuPG)
+and also <em>GNU Privacy Guard Plug-in</em> (BkGnuPG) in this page.
+</p><p>
+I do not do the explanation with regard to those here, although various terminology and abbreviation appear during sentences.
+Please consult that, because I am raising the bibliography to the end of this page.
+</p>
+
+
+<h2>Need of encryption e-mail</h2>
+<p>
+The e-mail that we are using usually casually may be safe how much.
+Although it is <em>mail by the post office</em> that it is compared well with an e-mail it is said that the safety of a usual e-mail is a <em>postcard</em> degree.
+Namely, the e-mail is that it is the safety like that <em>I am able to read if the 3rd person</em> intends to read it.
+And, it is delivered perhaps the contents may have been been rewritten by someone halfway.
+</p><p>
+The sender can not be proven in the present e-mail system furthermore.
+(There is assuming that the sender is shown, I can rewrite easily with the software of generally that at present there is this From field etc.)
+This case becomes <em>other someone</em> easily if it uses an e-mail and mean that can cause to finish it.
+Also, this case I can also pretend unand others of e-mail for the foul trick.
+</p><p>
+Time and, so that can use appropriately the postcard and letter
+as the case may be safety should be able to select a high delivery method more
+that the <em>mail by the post office</em> even an e-mail depends on case.
+Encryption e-mail can reply to this demand.
+</p>
+
+<h3>Encryption of the e-mail that used PGP/GnuPG</h3>
+<p>
+Although it is various e-mail in the method that encrypts I introduce the method that uses
+<em><a href="http://www.pgpi.org/">Pretty Good Privacy</a></em> (PGP)
+and GnuPG here.
+The point that PGP and GnuPG are excellent is shown below.
+</p><ol>
+<li>The encryption algorithm that is known to the world widely is being used.
+<li>It gets the source code easily.
+<li>It is free software fundamentally.   (There is part of restriction)
+</ol><p>
+The point <em>that is known</em> especially is very important when it thinks the security of a/the system.
+(By doing exclusively the fragility of the security that is kept is sufficient to see
+<a href="http://lwn.net/2000/0106/a/esr-dvd.html">example of the DVD</a>
+and may be understanding.)
+</p><p>
+By using the encryption e-mail by PGP/GnuPG
+we can add the following facilities to a conventional e-mail.
+</p><ol>
+<li>It is possible so as not to be read the contents by the 3rd person, by encrypting a message.
+<li>I can verify whether the e-mail that received is not rewritten.
+<li>The sender is able to be proven by the signature.
+    It becomes due to this and cause finished and able to prevent the likes.
+</ol>
+
+<h3>Unreasonable case in PGP/GnuPG</h3>
+<p>
+There are several of unreasonable case in PGP and GnuPG.
+</p><ol>
+<li>We are not able to conceal the information that sent (or received) e-mail in the encryption e-mail that used PGP/GnuPG.
+<li>We do not understand to whether was rewritten how, although the contents can verify whether or not the one that was rewritten, in the e-mail that was signed.
+<li>There may be the necessity that seals some contracts on the occasion of use, because part of cipher algorithm is protected with the patent.
+    (I am not using the cipher algorithm that conflicts with to the patent in GnuPG in default.)
+    And also that an individual uses the strong cipher system like PGP/GnuPG by a country and area, is being prohibited.
+</ol><p>
+It may become a problem in the case that I demand higher security
+(For example it is in the case that I want to finish hiding fact itself that sent e-mail.),
+although it does not become a problem much in the case that only the safety like a letter expects to encryption e-mail about the first 2 pieces.
+For instance, it combines it with other method in this case doing security needs to be secured.
+(In the case that it says most, so although I had better not use an/the electronic e-mail.)
+In the case that No. 3 becomes a problem I have no way but to give up the use of PGP/GnuPG.
+</p>
+
+
+<h2><a name="compatible">Exchangeability of GnuPG and PGP</a></h2>
+<p>
+Several of attentions are necessary to do the exchanging of encryption messages mutually with a PGP user actually,
+although GnuPG is introduced as <em>"another implement of PGP"</em>.
+</p>
+
+<h3>OpenPGP</h3>
+<p>
+Although it is now GnuPG is made with the standard of OpenPGP.
+Therefore, please think PGP 2.6.x that does not know OpenPGP that the exchanging of encryption messages is not possible mutually.
+(At all it does not impossible to.)
+</p><p>
+BkGnuPG is doing assuming that a partner side is using PGP (5.x over) or GnuPG.
+In the case that a partner is in the environment where is able to use PGP of the version of the front only from 5.x
+giving up that uses BkGnuPG we will had better think other method.
+(It is although I think that almost there is not the situation like that now.)
+</p>
+
+<h3>Public key encryption and digital signature algorithm</h3>
+<p>
+RSA key, or DH/DSS (rigidly Elgamal/DSS) key can be generated in PGP.
+In the case that the key is generated with GnuPG
+the kind of the key is selected from the combination of Elgamal and also DSA (the algorithm of DSS) each algorithm in the present version.
+Elgamal/DSA key needs to be prepared,
+to give the exchanging of encryption e-mail to the bi-direction with both applications.
+</p><p>
+When key imports it in GnuPG subsequent to version 1.0.3, RSA key has come to be able to be accepted.
+Yet, it is not possible the encryption and also decoding that used RSA/IDEA,
+because IDEA (one of symmetric-key encryption algorithm) is not incorporated in default.
+</p>
+
+<h3>Signature Packet</h3>
+<p>
+Two types of version 3 (V3) and version 4 (V4) exist in signature packet.
+Even GnuPG generates V4 signature in default, to be written that
+<em><a href="http://www.gnupg.org/rfc2440-5.html">"Implementations SHOULD generate V4 signatures."</a></em>
+to <a href="http://www.gnupg.org/rfc2440.html">OpenPGP</a>.
+However, PGP can treat only V3 signature type even the latest version.
+(It seems to accept V4 signature type about the signature of the key)
+Also the application seems to might end abnormal,
+when we try to verify V4 signature type by the version of PGP.
+</p><p>
+V3 signature comes to be generated forcibly, by checking <em>"PGP compatible"</em> item of <em><a href="index_en.html#SettingDlg">"Setting dialog"</a></em>
+(use <kbd>--force-v3-sigs</kbd> option),
+in the case that we use GnuPG from BkGnuPG.
+Let's avoid using V4 signature in the case that I do not understand the environment of a partner well.
+However, because there is the person who thinks that it is impolite to be used to sending the e-mail with the signature suddenly an attention.
+</p>
+
+<h3><a name="md5">Message digest algorithm</a></h3>
+<p>
+MD5 is able to be set up as the message digest algorithm of when that signs in BkGnuPG.
+This is doing the implement because
+<em>"it can sets up it like the indication with <a href="http://www.rfc-editor.org/rfc/rfc2015.txt">PGP/MIME" (RFC2015)</a></em>
+only.
+(PGP/MIME is able to set up MD5 and also SHA-1 as message digest algorithm.)
+</p><p>
+However, I SHOULD NOT use MD5, because it is pointed out the weak nature as message digest algorithm.
+PGP uses SHA-1 in the case that it signs with DSA key.
+It seems to be doing verify processing assuming that SHA-1 is used without regard to a/the header information
+if it is the signature by a DSA key in at the time of the verification also.
+</p>
+
+<h3>Implementation Nits</h3>
+<p>
+The problem regarding the exchangeability with PGP is written in <a href="http://www.gnupg.org/rfc2440-14.html">chapter 14 of OpenPGP</a>.
+</p>
+
+
+<h2>About security</h2>
+<p>
+I express several about the problem of the security of the time that uses GnuPG.
+It is the conversation of the time that uses commercial PGP/GnuPG mainly.
+It may be good even if we do not think rigidly up to here,
+in the case that I use PGP/GnuPG only with an individual.
+</p>
+
+<h3>Additional Decryption Key</h3>
+<p>
+ADK (Additional Decryption Key) became a topic in the security hall the other day.
+There is not the facility of ADK in GnuPG.
+However, the attention is necessary in the case that I am registering the public key of a self with the Key server.
+There may be the necessity that downloads the public key of a self periodically and check.
+Please refer to the following link about the security hall of ADK.
+</p><ul>
+<li><a href="http://www.cert.org/advisories/CA-2000-18.html">CERT Advisory CA-2000-18</a>
+<li><a href="http://www.pgp.com/other/advisories/adk.asp">Infoemation from Network Associates, Inc.</a>
+</ul><p>
+The confidence model with regard to the public key distribution of PGP/GnuPG is called <em>"Web of trust"</em>.
+This works effectively in the private fellow or community which closed.
+However, <em>"Web of trust"</em> may not work effectively.
+For example <em>"the relation between the company and employee"</em> are so.
+ADK is done to PGP the implement as one of such means that solves this problem.
+</p><p>
+It may be assumed that you had difficulty a little bit,
+in case that it was stated the escrow of the key from the company,
+if you are using GnuPG with the business.
+</p>
+
+<h3>Storage of the secret key</h3>
+<p>
+You should do the control of the secret key rigidly.
+Even if the partner is a superior official and parents you should not pass the whereabouts of the secret key.
+However, you may not go even so in the case that the partner is not equal relation with you.
+</p><p>
+When I put it by using PGP it was said such a case well with BBS etc.
+</p><blockquote>
+The secret key settles to one without dispersing and had better set up it plural key ID to the key.
+</blockquote><p>
+Is it really so really?
+In the case that it is using GnuPG with business the escrow of the such key that expressed a while ago may be been stated.
+Will not it be known by the company to the case, personal key?
+</p><p>
+I think that the one who I set up the control level
+where uses appropriately by a/the partner and purpose and differ every key is rational a plural key.
+</p>
+
+<h3><a name="bcc">Bcc recipients</a></h3>
+<p>
+The e-mail address that set up it to Bcc usually is not told by the users of other To, Cc, Bcc addresses.
+However, the existence of the user will be known by the users of other To, Cc, Bcc addresses,
+that it has encrypted with the public key of Bcc addresses,
+because it is possible that I take out the look of user ID from encryption packet.
+(You can see it easily with <kbd>--list-packet</kbd> command in GnuPG.)
+This case becomes a problem in the case that encryption e-mail is used with a business.
+</p><p>
+Usually, you SHOULD NOT check <em>"Encrypt with public keys of Bcc recipients"</em> item of <em><a href="index_en.html#SettingDlg">"Settings dialog"</a></em>.
+In case that you check it you are concerned with the problem that expressed previously and please operate prudently.
+</p><p>
+You can hide the key ID of recipients when you check <em>"Anonymous recipients"</em> item of
+<em><a href="index_en.html#SettingDlg">"Settings dialog"</a></em> in the case that you are understanding previously that the recipients is all the GnuPG users.
+</p>
+
+<h3>Security Considerations</h3>
+<p>
+The problem with regard to the security of PGP/GnuPG is listed in <a href="http://www.gnupg.org/rfc2440-13.html">chapter 13 of OpenPGP</a>.
+</p>
+
+
+<h2><a name="optfile">"options" file</a></h2>
+<p>
+You can describe the option of default in <em>"options"</em> file in GnuPG.
+The <em>"options"</em> file makes it for the home directory of GnuPG.
+It is possible be designated even the option that is not able to set up it with BkGnuPG if you employ <em>"options"</em> file.
+For example I think that you are able to use it
+in the case that special cipher algorithm is used
+and in the case that be putting the bunch of keyring file to a special directory.
+</p><p>
+Yet, BkGnuPG does not check <em>"options"</em> file.
+As a result that you do not expect, that the option that contradicts
+with the setting of BkGnuPG is described in <em>"options"</em> file it may become.
+</p>
+
+
+<h2>Bibliography</h2>
+<p>
+When I made BkGnuPG the following WWW page and book were referred to.
+I think that it is useful probably even in the case that you use BkGnuPG.
+And many many thanks for the people who are disclosing such useful information and software.
+</p>
+<ul>
+<li><a href="http://www.rimarts.co.jp/becky.htm">Becky! Version 2</a>
+<li><a href="http://mao.udn.ne.jp/b2pin/">B2 Plug-in Forum</a> (Japanese)
+<li><a href="http://www.gnupg.org/">The GNU Privacy Guard</a>
+<li><a href="http://hp.vector.co.jp/authors/VA019487/">GNU Privacy Gard lecture</a> (Japanese)
+<li><a href="http://www.yukaura.com/gnupg-becky/index.html">Use GnuPG with Becky!</a> (Japanese)
+<li><a href="http://pgp.iijlab.net/">Japanese Official PGP page</a> (Japanese)
+<li><a href="http://www.cla-ri.net/pgp/">PGP User's Manual for Windows</a> (Japanese)
+<li><a href="http://www.ora.com/catalog/pgp/">"PGP: Pretty Good Privacy"</a>
+<li><a href="http://www.rfc-editor.org/rfc/rfc2015.txt">PGP/MIME (RFC2015)</a>
+<li><a href="http://www.gnupg.org/rfc2440.html">OpenPGP (RFC2440)</a>
+</ul>
+
+
+<hr>
+<div align="right">
+Please contact to
+<em><a href="mailto:spiegel@alles.or.jp">spiegel@alles.or.jp</a></em>
+if you wish to comment on this page.
+</div>
+</body>
+</html>

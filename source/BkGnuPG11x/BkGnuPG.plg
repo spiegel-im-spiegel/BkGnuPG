@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: BkGnuPG - Win32 Release--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/BkGnuPG.res" /d "NDEBUG" "D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\BkGnuPG.rc"" 
+一時ﾌｧｲﾙ "D:\home\spiegel\~temp\RSPDC.tmp" を作成し、次の内容を記録します
+[
+/nologo /MT /W3 /GX /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "BKGNUPG_EXPORTS" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\AddressList.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BeckyAPI.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\BkGnuPG.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\BkGnuPGInfo.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\Common.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\Decrypt.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\Encrypt.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\GnuPGModule.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\LogFile.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\MIMEMessage.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\PassDialog.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\PubKey.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\SetupDialog.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\UsersDialog.cpp"
+"D:\develop\project\BkGnuPG\trunk\source\BkGnuPG10x\ViewDialog.cpp"
+]
+Creating command line "cl.exe @D:\home\spiegel\~temp\RSPDC.tmp" 
+一時ﾌｧｲﾙ "D:\home\spiegel\~temp\RSPDD.tmp" を作成し、次の内容を記録します
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Release/BkGnuPG.pdb" /machine:I386 /def:".\BkGnuPG.def" /out:"Release/BkGnuPG.dll" /implib:"Release/BkGnuPG.lib" 
+.\Release\AddressList.obj
+.\Release\BeckyAPI.obj
+.\Release\BkGnuPG.obj
+.\Release\BkGnuPGInfo.obj
+.\Release\Common.obj
+.\Release\Decrypt.obj
+.\Release\Encrypt.obj
+.\Release\GnuPGModule.obj
+.\Release\LogFile.obj
+.\Release\MIMEMessage.obj
+.\Release\PassDialog.obj
+.\Release\PubKey.obj
+.\Release\SetupDialog.obj
+.\Release\UsersDialog.obj
+.\Release\ViewDialog.obj
+.\Release\BkGnuPG.res
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe @D:\home\spiegel\~temp\RSPDD.tmp" の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ﾘｿｰｽをｺﾝﾊﾟｲﾙ中...
+ｺﾝﾊﾟｲﾙ中...
+AddressList.cpp
+BeckyAPI.cpp
+BkGnuPG.cpp
+BkGnuPGInfo.cpp
+Common.cpp
+Decrypt.cpp
+Encrypt.cpp
+GnuPGModule.cpp
+LogFile.cpp
+MIMEMessage.cpp
+PassDialog.cpp
+PubKey.cpp
+SetupDialog.cpp
+UsersDialog.cpp
+ViewDialog.cpp
+ｺｰﾄﾞを生成中...
+ﾘﾝｸ中...
+   ﾗｲﾌﾞﾗﾘ Release/BkGnuPG.lib とｵﾌﾞｼﾞｪｸﾄ Release/BkGnuPG.exp を作成中
+
+
+
+<h3>結果</h3>
+BkGnuPG.dll - ｴﾗｰ 0、警告 0
+</pre>
+</body>
+</html>

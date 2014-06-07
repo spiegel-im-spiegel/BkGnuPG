@@ -1,0 +1,663 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// УъЦ{Мк resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,5,2
+ PRODUCTVERSION 1,0,5,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "04090000"
+        BEGIN
+            VALUE "Comments", "Adds GnuPG capability to Becky!\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "BkGnuPG\0"
+            VALUE "FileVersion", "1.0.5b2\0"
+            VALUE "InternalName", "BkGnuPG\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000-2004 Yasuhiro ARAKAWA\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BkGnuPG.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "GNU Privacy Guard Plug-in\0"
+            VALUE "ProductVersion", "1.0.5b2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "Comments", "GNU Privacy Guard ВрОgВЅВƒГБГbГZБ[ГWВћИ√НЖЙї/ХЬНЖЙїВрНsВ§ Becky! 2 РкЧp Plug-in\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "BkGnuPG\0"
+            VALUE "FileVersion", "1.0.5b2\0"
+            VALUE "InternalName", "BkGnuPG\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000-2004 Yasuhiro ARAKAWA\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BkGnuPG.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "GNU Privacy Guard Plug-in\0"
+            VALUE "ProductVersion", "1.0.5b2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 0, 0x411, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GPG_SETUPDIALOG DIALOG DISCARDABLE  0, 0, 215, 202
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG Settings"
+FONT 9, "ВlВr ВoГSГVГbГN"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,185,50,14
+    PUSHBUTTON      "ГLГГГУГZГЛ",IDCANCEL,160,185,50,14
+    LTEXT           "ГfГtГHГЛГgГЖБ[ГUID(&U)БF",IDC_STATIC,5,5,205,8
+    EDITTEXT        IDC_EDIT_DEFUSERID,5,15,205,12,ES_AUTOHSCROLL
+    CONTROL         "&PGP МЁКЈВћПРЦЉБEИ√НЖЙїВрНsВ§",IDC_CHECK_CMP_PGP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,35,200,10
+    CONTROL         "RFC1991 (PGP &2.6.x) В…П]В§",IDC_CHECK_RFC1991,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,50,190,10
+    CONTROL         "&OpenPGP В…ПАЛТВµВљПРЦЉБEИ√НЖЙїВрНsВ§",
+                    IDC_CHECK_OpenPGP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    5,65,205,10
+    CONTROL         "ОуРMО“ВрУљЦЉВ…ВЈВй (&A)",IDC_CHECK_THROWKEYID,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,80,190,10
+    CONTROL         "PGP/&MIME (RFC2015) ВрОgЧpВµВƒСЧРMГБГbГZБ[ГWВрНмРђ",
+                    IDC_CHECK_PGPMIME,"Button",BS_AUTOCHECKBOX | BS_LEFT | 
+                    BS_VCENTER | WS_TABSTOP,5,95,200,10
+    CONTROL         "ГБГbГZБ[ГWЧvЦсГAГЛГSГКГYГАВ… MD&5 ВрОgВ§ (ФсРДПІ)",
+                    IDC_CHECK_MD5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,
+                    110,205,10
+    CONTROL         "&Cc ВћГAГhГМГXГЖБ[ГUВћМцКJМЃВ≈ВаИ√НЖЙїВЈВй",
+                    IDC_CHECK_CCENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    5,125,200,10
+    CONTROL         "&Bcc ВћГAГhГМГXГЖБ[ГUВћМцКJМЃВ≈ВаИ√НЖЙїВЈВй (ФсРДПІ)",
+                    IDC_CHECK_BCCENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,140,200,10
+    CONTROL         "&From ВћГAГhГМГXГЖБ[ГUВћМцКJМЃВ≈ВаИ√НЖЙїВЈВй",
+                    IDC_CHECK_FROMENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,155,205,10
+    CONTROL         "ГfГtГHГЛГgГЖБ[ГUВћМцКJМЃВ≈ВаИ√НЖЙїВЈВй (&D)",
+                    IDC_CHECK_DEFUSRENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,170,150,10
+END
+
+IDD_GPG_PASSPHRASEDIALOG DIALOG DISCARDABLE  0, 0, 314, 75
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG Passphrase"
+FONT 9, "ВlВr ВoГSГVГbГN"
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSPHRASE,80,25,230,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "ГpГXГtГМБ[ГYХ\О¶(&S)",IDC_CHECK_SHOWTEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,80,42,96,10
+    CONTROL         "ГGБ[ГWГFГУГgОgЧp(&A)",IDC_CHECK_USEAGENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,178,42,111,10
+    PUSHBUTTON      "РЁТи(&S)...",IDC_BUTTON_SETTING,3,57,50,14
+    DEFPUSHBUTTON   "OK",IDOK,205,57,51,14
+    PUSHBUTTON      "ГLГГГУГZГЛ",IDCANCEL,263,57,47,14
+    RTEXT           "ГНБ[ГJГЛГЖБ[ГU(&U):",IDC_STATIC,5,5,70,8
+    RTEXT           "ГpГXГtГМБ[ГY(&P):",IDC_STATIC,5,25,70,10
+    EDITTEXT        IDC_EDIT_USERID,80,5,230,13,ES_AUTOHSCROLL
+END
+
+IDD_VIEWDIALOG DIALOG DISCARDABLE  0, 0, 352, 186
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Output"
+FONT 9, "ВlВr ВoГSГVГbГN"
+BEGIN
+    DEFPUSHBUTTON   "Х¬ВґВй",IDOK,295,167,50,13
+    EDITTEXT        IDC_EDIT_VIEW,5,5,339,157,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_GPG_RUSERSDIALOG DIALOG DISCARDABLE  0, 0, 319, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG ОуРMО“"
+FONT 9, "ВlВr ВoГSГVГbГN"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,65,50,14
+    PUSHBUTTON      "ГLГГГУГZГЛ",IDCANCEL,260,65,50,14
+    LTEXT           "ОуРMО“(&R):",IDC_STATIC,10,10,65,8
+    EDITTEXT        IDC_EDIT_USERID,10,25,300,12,ES_AUTOHSCROLL
+    LTEXT           "Б¶ ОуРMО“ВћГББ[ГЛГAГhГМГXВрОwТиВµВƒЙЇВ≥ВҐБBХ°РФОwТиВЈВйПкНЗВЌГJГУГ}В≈ЛжРЎВЅВƒЙЇВ≥ВҐБB",
+                    IDC_STATIC,10,45,295,15
+    PUSHBUTTON      "РЁТи(&S)...",IDC_BUTTON_SETTING,10,65,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_GPG_PASSPHRASEDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        VERTGUIDE, 80
+        VERTGUIDE, 310
+        BOTTOMMARGIN, 71
+        HORZGUIDE, 42
+        HORZGUIDE, 58
+    END
+
+    IDD_GPG_RUSERSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_DECRYPT         "PGPГБГbГZБ[ГWВћХЬНЖЙїВ∆МЯПЎ"
+    IDS_GPG_SIGN            "GnuPGВ≈ПРЦЉВрВЈВй"
+    IDS_GPG_ENCRYPT         "GnuPGВ≈И√НЖЙїВрВЈВй"
+    IDS_GPG_SIGNENCRYPT     "GnuPGВ≈ПРЦЉВ∆И√НЖЙїВрВЈВй"
+    IDS_GPG_ATTACHKEY       "PGPМцКJМЃВрУYХtВЈВй"
+    IDS_GPG_SETUP           "GnuPGГvГЙГOГCГУВћРЁТи"
+    IDS_GPGMENU_DECRYPT     "GnuPG: ХЬНЖЙїВ∆МЯПЎ..."
+    IDS_GPGMENU_SIGN        "GnuPG: ПРЦЉ..."
+    IDS_GPGMENU_ENCRYPT     "GnuPG: И√НЖЙї..."
+    IDS_GPGMENU_SIGNENCRYPT "GnuPG: ПРЦЉВ∆И√НЖЙї..."
+    IDS_GPGMENU_ATTACHKEY   "GnuPG: МцКJМЃВћУYХt..."
+    IDS_GPGMENU_SETUP       "GnuPG: РЁТи..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_ERROR           "PGPГБГbГZБ[ГWВ≈ВЌВ†ВиВ№ВєВс"
+    IDS_GPG_NOTPROCESSED    "GnuPGВћЛNУЃВ…ОЄФsВµВ№ВµВљ"
+    IDS_GPG_NORECIPIENT     "ОуРMО“В™ОwТиВ≥ВкВƒВҐВ№ВєВс\nОуРMО“ВћГББ[ГЛГAГhГМГXВрОwТиВµВƒЙЇВ≥ВҐ"
+    IDS_GPG_NOLOCALUSER     "ГНБ[ГJГЛГЖБ[ГUВ™ОwТиВ≥ВкВƒВҐВ№ВєВс\nПРЦЉВЌНЈПoРlВћГББ[ГЛГAГhГМГXВрГЖБ[ГUIDВ∆ВµВƒВҐВ№ВЈ"
+    IDS_GPG_FATALERROR      "УаХФГGГЙБ[В™Ф≠РґВµВ№ВµВљБBПИЧЭВрТЖТfВµВ№ВЈ"
+    IDS_GPG_EXCEPTION       "ТvЦљУIГGГЙБ[В™Ф≠РґВµВ№ВµВљБBПИЧЭВрТЖТfВµВ№ВЈ"
+    IDS_GPG_FAILATTACHPUBKEY "МцКJМЃВћУ\ВиХtВѓВ…ОЄФsВµВ№ВµВљ"
+    IDS_PIN_NAME            "GNU Privacy Guard Plug-in"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PIN_DESCRIPTION     "GNU Privacy Guard ВрОgВЅВƒГБГbГZБ[ГWВћИ√НЖЙї/ХЬНЖЙїВрНsВ§ Becky! 2 РкЧp Plug-in"
+    IDS_PIN_VERSION         "Version 1.0.5b2"
+    IDS_PIN_VENDER          "НrРм ЦхНO"
+END
+
+#endif    // УъЦ{Мк resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// џЉ±Мк resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,5,2
+ PRODUCTVERSION 1,0,5,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904b0"
+        BEGIN
+            VALUE "Comments", "ѕозвол€ет полноценно использовать GnuPG с Becky!\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ѕлагин дл€ поддержки GnuPG почтовым клиентом Becky!\0"
+            VALUE "FileVersion", "1.0.5b2\0"
+            VALUE "InternalName", "BkGnuPG\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000-2004 Yasuhiro ARAKAWA\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BkGnuPG\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "BkGnuPG\0"
+            VALUE "ProductVersion", "1.0.5b2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GPG_PASSPHRASEDIALOG DIALOGEX 0, 0, 314, 75
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "¬вод парол€ дл€ секретного ключа"
+FONT 8, "MS Shell Dlg", 400, 0, 0xCC
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSPHRASE,80,25,230,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "ѕоказать пароль",IDC_CHECK_SHOWTEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,43,42,122,13
+    CONTROL         "»спользовать агента",IDC_CHECK_USEAGENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,171,42,139,12
+    PUSHBUTTON      "Ќастройка",IDC_BUTTON_SETTING,2,57,50,14
+    DEFPUSHBUTTON   "OK",IDOK,209,57,51,14
+    PUSHBUTTON      "ќтмена",IDCANCEL,263,57,47,14
+    RTEXT           "ѕользователь:",IDC_STATIC,5,5,70,8
+    RTEXT           "ѕароль:",IDC_STATIC,5,25,70,10
+    EDITTEXT        IDC_EDIT_USERID,80,5,230,13,ES_AUTOHSCROLL
+END
+
+IDD_GPG_SETUPDIALOG DIALOGEX 0, 0, 223, 203
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ќастройка плагина GnuPG"
+FONT 8, "MS Shell Dlg", 400, 0, 0xCC
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,185,50,14
+    PUSHBUTTON      "ќтмена",IDCANCEL,165,185,50,14
+    LTEXT           "ѕользователь по умолчанию:",IDC_STATIC,5,5,205,8
+    EDITTEXT        IDC_EDIT_DEFUSERID,5,15,210,12,ES_AUTOHSCROLL
+    CONTROL         "–ежим совместимости с PGP",IDC_CHECK_CMP_PGP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,35,210,10
+    CONTROL         "—овместимость с RFC1991 (PGP 2.6.x)",IDC_CHECK_RFC1991,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,50,195,10
+    CONTROL         "—овместимость с OpenPGP",IDC_CHECK_OpenPGP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,65,210,10
+    CONTROL         "јнонимные получатели",IDC_CHECK_THROWKEYID,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,80,195,10
+    CONTROL         "»спользовать PGP/&MIME (RFC2015)",IDC_CHECK_PGPMIME,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | 
+                    WS_TABSTOP,5,95,210,10
+    CONTROL         "»спользовать алгоритм MD5 (нежелательно)",IDC_CHECK_MD5,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,110,210,10
+    CONTROL         "Ўифровать ключами получателей из CC",IDC_CHECK_CCENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,125,210,10
+    CONTROL         "Ўифровать ключами получателей BCC (нежелательно)",
+                    IDC_CHECK_BCCENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,140,210,10
+    CONTROL         "Ўифровать ключом отправител€",IDC_CHECK_FROMENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,155,210,10
+    CONTROL         "Ўифровать ключом по умолчанию",IDC_CHECK_DEFUSRENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,170,210,10
+END
+
+IDD_VIEWDIALOG DIALOGEX 0, 0, 352, 186
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "–езультат работы GnuPG"
+FONT 8, "MS Shell Dlg", 400, 0, 0xCC
+BEGIN
+    DEFPUSHBUTTON   "«акрыть",IDOK,295,167,50,13
+    EDITTEXT        IDC_EDIT_VIEW,5,5,339,157,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_GPG_RUSERSDIALOG DIALOGEX 0, 0, 319, 87
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ѕолучатели сообщени€"
+FONT 8, "MS Shell Dlg", 400, 0, 0xCC
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,65,50,14
+    PUSHBUTTON      "ќтмена",IDCANCEL,260,65,50,14
+    LTEXT           "ѕолучатели:",IDC_STATIC,10,10,65,8
+    EDITTEXT        IDC_EDIT_USERID,10,25,300,12,ES_AUTOHSCROLL
+    LTEXT           "(»спользуйте зап€тую дл€ разделени€ нескольких адресов)",
+                    IDC_STATIC,10,45,295,15
+    PUSHBUTTON      "Ќастройка",IDC_BUTTON_SETTING,10,65,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_GPG_PASSPHRASEDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        VERTGUIDE, 80
+        VERTGUIDE, 310
+        BOTTOMMARGIN, 71
+        HORZGUIDE, 42
+    END
+
+    IDD_GPG_SETUPDIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 215
+    END
+
+    IDD_GPG_RUSERSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_DECRYPT         "–асшифровать и проверить подлинность сообщени€"
+    IDS_GPG_SIGN            "ѕодписать с помощью GnuPG"
+    IDS_GPG_ENCRYPT         "«ашифровать с помощью GnuPG"
+    IDS_GPG_SIGNENCRYPT     "«ашифровать и подписать с помощью GnuPG"
+    IDS_GPG_ATTACHKEY       "ѕрицепить публичный ключ GnuPG"
+    IDS_GPG_SETUP           "Ќастройка модул€ GnuPG"
+    IDS_GPGMENU_DECRYPT     "–асшифровать и проверить"
+    IDS_GPGMENU_SIGN        "ѕодписать"
+    IDS_GPGMENU_ENCRYPT     "«ашифровать"
+    IDS_GPGMENU_SIGNENCRYPT "«ашифровать и подписать"
+    IDS_GPGMENU_ATTACHKEY   "ѕрисоединить публичный ключ"
+    IDS_GPGMENU_SETUP       "Ќастройки..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_ERROR           "Ёто не сообщение в формате PGP"
+    IDS_GPG_NOTPROCESSED    "Ќе удалось запустить GnuPG"
+    IDS_GPG_NORECIPIENT     "Ќе указаны получатели"
+    IDS_GPG_NOLOCALUSER     "Ќе указан локальный пользователь"
+    IDS_GPG_FATALERROR      "‘атальна€ ошибка"
+    IDS_GPG_EXCEPTION       "—истемное исключение"
+    IDS_GPG_FAILATTACHPUBKEY "Can not attach your Public-key"
+    IDS_PIN_NAME            "ћодуль поддержки GNU Privacy Guard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PIN_DESCRIPTION     "ѕозвол€ет полноценно использовать GnuPG с Becky!"
+    IDS_PIN_VERSION         "¬ерси€ 1.0.5b2"
+    IDS_PIN_VENDER          "Yasuhiro ARAKAWA"
+END
+
+#endif    // џЉ±Мк resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// ЙpМк (±“Ўґ) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GPG_PASSPHRASEDIALOG DIALOG DISCARDABLE  0, 0, 311, 75
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG Passphrase"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSPHRASE,80,25,227,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "&Show Passphrase",IDC_CHECK_SHOWTEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,80,41,77,10
+    CONTROL         "Use &Agent",IDC_CHECK_USEAGENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,162,41,62,14
+    PUSHBUTTON      "&Setup...",IDC_BUTTON_SETTING,2,56,50,14
+    DEFPUSHBUTTON   "OK",IDOK,205,56,51,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,56,47,14
+    RTEXT           "Local &User:",IDC_STATIC,5,5,70,8
+    RTEXT           "&Passphrase:",IDC_STATIC,5,25,70,10
+    EDITTEXT        IDC_EDIT_USERID,80,5,227,13,ES_AUTOHSCROLL
+END
+
+IDD_GPG_RUSERSDIALOG DIALOG DISCARDABLE  0, 0, 319, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG Recipients"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,65,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,65,50,14
+    LTEXT           "&Recipients:",IDC_STATIC,10,10,65,8
+    EDITTEXT        IDC_EDIT_USERID,10,25,300,12,ES_AUTOHSCROLL
+    LTEXT           "(Please divide it with the comma in the case that you enter 2 or more addresses.)",
+                    IDC_STATIC,10,45,295,15
+    PUSHBUTTON      "&Setup...",IDC_BUTTON_SETTING,10,65,50,14
+END
+
+IDD_VIEWDIALOG DIALOG DISCARDABLE  0, 0, 352, 186
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Output"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,295,167,50,13
+    EDITTEXT        IDC_EDIT_VIEW,5,5,339,157,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_GPG_SETUPDIALOG DIALOG DISCARDABLE  0, 0, 223, 203
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GnuPG Settings"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,185,50,14
+    LTEXT           "Default &User ID:",IDC_STATIC,5,5,205,8
+    EDITTEXT        IDC_EDIT_DEFUSERID,5,15,210,12,ES_AUTOHSCROLL
+    CONTROL         "&PGP compatible",IDC_CHECK_CMP_PGP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,35,210,10
+    CONTROL         "Try to be more RFC1991 (PGP &2.6.x) compliant",
+                    IDC_CHECK_RFC1991,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    20,50,195,10
+    CONTROL         "&OpenPGP behavior",IDC_CHECK_OpenPGP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,65,205,10
+    CONTROL         "&Anonymous recipients",IDC_CHECK_THROWKEYID,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,80,190,10
+    CONTROL         "PGP/&MIME (RFC2015) content type",IDC_CHECK_PGPMIME,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFT | BS_VCENTER | 
+                    WS_TABSTOP,5,95,210,10
+    CONTROL         "Use message digest algorithm MD&5 (NOT SHOULD)",
+                    IDC_CHECK_MD5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,
+                    110,210,10
+    CONTROL         "Encrypt with public keys of &Cc recipients",
+                    IDC_CHECK_CCENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    5,125,210,10
+    CONTROL         "Encrypt with public keys of &Bcc recipients (NOT SHOULD)",
+                    IDC_CHECK_BCCENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,140,210,10
+    CONTROL         "Encrypt with public key of &From user",
+                    IDC_CHECK_FROMENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,155,134,10
+    CONTROL         "Encrypt with public key of &Default user",
+                    IDC_CHECK_DEFUSRENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,170,140,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_GPG_PASSPHRASEDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        VERTGUIDE, 80
+        VERTGUIDE, 307
+        HORZGUIDE, 41
+        HORZGUIDE, 70
+    END
+
+    IDD_GPG_RUSERSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_DECRYPT         "Decrypt and Verify PGP message"
+    IDS_GPG_SIGN            "Sign with GnuPG"
+    IDS_GPG_ENCRYPT         "Encrypt with GnuPG"
+    IDS_GPG_SIGNENCRYPT     "Encrypt And Sign with GnuPG"
+    IDS_GPG_ATTACHKEY       "Attach a PGP public key"
+    IDS_GPG_SETUP           "Setup GnuPG plugin"
+    IDS_GPGMENU_DECRYPT     "GnuPG: Decrypt And Verify..."
+    IDS_GPGMENU_SIGN        "GnuPG: Sign..."
+    IDS_GPGMENU_ENCRYPT     "GnuPG: Encrypt..."
+    IDS_GPGMENU_SIGNENCRYPT "GnuPG: Sign And Encrypt..."
+    IDS_GPGMENU_ATTACHKEY   "GnuPG: Attach Public Key..."
+    IDS_GPGMENU_SETUP       "GnuPG: Setup..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GPG_ERROR           "This is not a PGP message"
+    IDS_GPG_NOTPROCESSED    "Can not launch GnuPG program"
+    IDS_GPG_NORECIPIENT     "No recipients are specified!"
+    IDS_GPG_NOLOCALUSER     "No local user is specified!"
+    IDS_GPG_FATALERROR      "Fatal error"
+    IDS_GPG_EXCEPTION       "System exception error"
+    IDS_GPG_FAILATTACHPUBKEY "Can not attach your Public-key"
+    IDS_PIN_NAME            "GNU Privacy Guard Plug-in"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PIN_DESCRIPTION     "Adds GnuPG capability to Becky!"
+    IDS_PIN_VERSION         "Version 1.0.5b2"
+    IDS_PIN_VENDER          "Yasuhiro ARAKAWA"
+END
+
+#endif    // ЙpМк (±“Ўґ) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

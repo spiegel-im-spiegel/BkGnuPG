@@ -1,0 +1,18 @@
+DESCRIPTION  'Becky! plugin'
+
+EXPORTS
+BKC_OnStart	@1
+BKC_OnExit	@2
+BKC_OnMenuInit	@3
+BKC_OnOpenFolder	@4
+BKC_OnOpenMail	@5
+BKC_OnEveryMinute	@6
+BKC_OnOpenCompose	@7
+BKC_OnOutgoing	@8
+BKC_OnKeyDispatch	@9
+BKC_OnRetrieve	@10
+BKC_OnSend	@11
+BKC_OnFinishRetrieve	@12
+BKC_OnPlugInSetup	@13
+BKC_OnPlugInInfo	@14
+BKC_OnDragDrop		@15

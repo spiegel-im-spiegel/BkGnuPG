@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta http-equiv="Keywords" content="Spiegel, Free Software, Becky! 2, Plug-in, GnuPG, BkGnuPG, Tips">
+<meta name="author" content="Yasuhiro ARAKAWA">
+<link rev="made" href="mailto:spiegel@alles.or.jp">
+<link rel="contents" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html">
+<!-- link rel="next" href="" -->
+<link rel="prev" href="index.html">
+<title>Tips - GNU Privacy Guard Plug-in for Becky! 2</title>
+</head>
+
+
+<body bgcolor="#ffffdd" text="#000000" link="blue" alink="red" vlink="navy">
+← <a href="index.html">MANUAL</a>
+<hr>
+<div align="right">
+Copyright &copy; 2000,2001 <a href="mailto:spiegel@alles.or.jp">Yasuhiro ARAKAWA</a>
+</div>
+<h1>Tips - 暗号化メール利用のコツ</h1>
+<p>
+ここでは，
+<a href="http://www.rimarts.co.jp/becky-j.htm">Becky! Internet Mail Ver.2</a> (B2)
+と
+<a href="http://www.gnupg.org/">GNU Privacy Guard</a> (GnuPG)
+および GNU Privacy Guard Plug-in (BkGnuPG) を使って暗号化メールの送受信を行うためのコツを思いつく限り紹介していきたいと思います。
+暗号化メールを利用する際に何かの参考になれば幸いです。
+(字ばっかりですみません)
+</p><p>
+文章中に暗号に関する様々な用語や略語が出てきますが，
+ここではそれらについての説明は行いません。
+あらかじめご了承ください。
+なお，末尾に参考文献を挙げていますので，
+そちらの方を参考にされるといいと思います。
+</p>
+
+
+<h2>暗号化メールの必要性</h2>
+<p>
+私達が普段なにげなく利用している電子メールはどの程度安全なのでしょう。
+電子メールとよく比較されるのは「郵便」ですが，
+通常の電子メールの安全性は「ハガキ」程度であると言われています。
+つまり，
+電子メールは第3者が「読もうと思えば読める」程度の安全性であるということです。
+そして，
+もしかしたら配信される途中で誰かに内容を書き換えられてしまうかもしれません。
+</p><p>
+更に，現在の電子メールシステムでは差出人を証明することができません。
+(差出人を示すものとしては From フィールドなどがありますが，
+これは現在ある大抵のメールソフトで簡単に書き換えることができます)
+このことは，
+電子メールを使えば簡単に「他の誰か」になりすますことができる事を意味します。
+また，このことを逆手にとってメールの不達を偽ることもできます。
+</p><p>
+郵便が時と場合によりハガキと (書留あるいは内容証明付きの) 封書を使い分けることができるように，
+電子メールでも場合によってはもっと安全性の高い配信方法を選択できるべきです。
+暗号化メールはこの要求に答えることができます。
+</p>
+
+<h3>PGP/GnuPG を使ったメールの暗号化</h3>
+<p>
+暗号化メールの実装は色々あるのですが，
+ここでは
+<a href="http://www.pgpi.org/">Pretty Good Privacy</a> (PGP)
+や GnuPG を使ったメールの暗号化を紹介します。
+PGP や GnuPG が優れているところは
+</p><ol>
+<li>世の中に広く公開されている暗号化アルゴリズムを使用している
+<li>ソースコードが公開されている
+<li>基本的にフリーソフトである (一部制限あり)
+</ol><p>
+という点でしょう。
+特に「公開されている」という点はシステムの安全性を考える上で非常に重要です。
+(非公開にすることにより保たれているセキュリティの脆さは，
+<a href="http://www1.neweb.ne.jp/wa/yamdas/column/technique/esr-dvdj.html">DVD の例</a>などを見ればよくおわかりでしょう)
+</p><p>
+PGP/GnuPG による暗号化メールを利用することにより，
+従来の電子メールに以下の機能を付加することができます。
+</p><ol>
+<li>メッセージ本文を暗号化することにより，内容を第3者に読まれないようにできる。
+<li>受け取ったメールが改竄されてないか検証することができる。
+<li>電子署名により差出人を証明できる。
+    このことにより「なりすまし」や「不達と偽証すること」を防げる。
+</ol>
+
+<h3>PGP/GnuPG にできないこと</h3>
+<p>
+一方 PGP や GnuPG ではできないこともいくつかあります。
+</p><ol>
+<li>PGP/GnuPG を使った暗号化メールでは
+    「メールを送った (受け取った)」
+    という情報は隠蔽できません。
+    (現在の日本の法律では，条件によってはISPのメールサーバが捜査の対象になり得ます。
+    また，企業内に設置されたメールサーバは「業務命令」により中身を検閲することが可能です)
+<li>電子署名されたメールでは，
+    内容が改竄されたものかどうかを検証することができますが，
+    どのように改竄されたかまでは分かりません。
+<li>暗号アルゴリズムによっては，特許で保護されているため，使用に際し何らかの契約を結ぶ必要があるかもしれません。
+    (GnuPGでは特許に抵触する暗号アルゴリズムはデフォルトでは実装されていません)
+    また国や地域によっては，
+    PGP/GnuPG のような強力な暗号システム自体を個人が使用することを禁じているところがあります。
+</ol><p>
+最初の2つについては，
+暗号化メールに対し封書程度の安全性しか期待しない場合にはあまり問題になりませんが，
+もっと高いセキュリティを要求する場合
+(例えばメールを送ったという事実自体を隠しておきたい場合など)
+には問題になるかもしれません。
+この場合は他の手段と組み合わせるなどして安全性を確保する必要があります。
+(もっとも，そういう場合には電子メールなど使わない方がいいのですが)<br>
+3番目が問題になる場合には PGP/GnuPG の使用を諦めるしかありません。
+</p>
+
+
+<h2><a name="compatible">GnuPG と PGP の互換性</a></h2>
+<p>
+GnuPG は
+「PGP の別実装」
+として紹介されていますが，
+実際に PGP ユーザと相互に暗号メッセージのやりとりを行うためにはいくつか注意が必要です。
+</p>
+
+<h3>OpenPGP</h3>
+<p>
+いまさらですが，
+GnuPG は
+<a href="http://www.gnupg.org/rfc2440.html">RFC2440 (OpenPGP)</a>
+を基に機能を実装しています。
+従って，
+OpenPGP を「知らない」 PGP 2.6.x とは相互に暗号メッセージのやりとりは出来ない，
+と考えて下さい。
+(全くできないわけではありません。
+例えば
+<a href="http://www.jca.ax.apc.org/~yukihiro/comp/pgp/gpg.html">「GNU Privacy Guard について」</a>
+などのページを参考にするとよいでしょう)
+</p><p>
+BkGnuPG は，
+相手側が
+PGP (5.x 以上) または GnuPG を使っていることを前提にしています。
+相手が 5.x より前のバージョンの PGP しか使えない環境にある場合は
+(今ではそのような状況は殆どないと思いますが)，
+潔く BkGnuPG を使うのを諦めて他の方法を考えたほうがよいでしょう。
+</p>
+
+<h3>公開鍵暗号・署名アルゴリズム</h3>
+<p>
+PGP では RSA 鍵，または DH/DSS (厳密には Elgamal/DSS) 鍵を生成することができます。
+一方 GnuPG で鍵を生成する場合は，
+現在のバージョンでは，
+Elgamal および DSA (DSS のアルゴリズム) 各アルゴリズムの組み合わせから鍵の種類を選択します。
+従って，両方のアプリケーションで双方向に暗号化メールのやりとりを行うためには，
+Elgamal/DSA 鍵を用意する必要があります。
+</p><p>
+バージョン 1.0.3 以降の GnuPG では，
+鍵のインポートの際に RSA 鍵を受け入れることができるようになりました。
+ただし，
+(デフォルトでは) <a href="http://www.it-sec.com/idea.html">IDEA</a> (共通鍵暗号アルゴリズムの１つ) が実装されていないため，
+RSA/IDEA を使った暗号化および復号化が出来ません。
+</p>
+
+<h3>署名パケット</h3>
+<p>
+現在署名パケットには バージョン3 (V3) と バージョン4 (V4) の2種類が存在します。
+<a href="http://www.gnupg.org/rfc2440.html">OpenPGP</a>
+では
+<a href="http://www.gnupg.org/rfc2440-5.html">「実装は V4 署名を生成するべき (SHOULD)」</a>
+と謳っているため，
+GnuPG もデフォルトでは V4 署名を生成します。
+しかし PGP の現在リリースされているバージョンでは V3 署名しか扱うことができません。
+(鍵の署名については V4 署名を受け入れるようです)
+また PGP のバージョンによっては，
+V4 署名を検証しようとすると，
+アプリケーションが異常終了することもあるようです。
+</p><p>
+BkGnuPG から GnuPG を使う場合は，
+<a href="index.html#SettingDlg">設定ダイアログ</a>の
+「PGP 互換の署名・暗号化を行う」
+をチェック
+(<kbd>--force-v3-sigs</kbd> オプションの使用)
+することにより，
+強制的に V3 署名を生成するようになります。
+相手の環境がよくわからない場合は V4 署名を使わないようにしましょう。
+しかし，それ以前に，
+あらかじめ合意を得ることなくいきなり署名付きのメールを送りつけるのは失礼だ，
+と考える人もいますのでご注意を。
+</p>
+
+<h3><a name="md5">メッセージ要約アルゴリズム</a></h3>
+<p>
+BkGnuPG では，署名時のメッセージ要約アルゴリズムとして MD5 を指定できるようになっています。
+これは単に
+「<a href="http://www.rfc-editor.org/rfc/rfc2015.txt">PGP/MIME (RFC2015)</a> で明示的に指定することができるから」
+という理由だけで実装しているものです。
+(PGP/MIME では，今のところメッセージ要約アルゴリズムとして，
+MD5 および SHA-1 を指定できます)
+</p><p>
+しかし，
+MD5 はメッセージ要約アルゴリズムとしての脆弱性を指摘されているため，
+推奨されません。
+また PGP では DSA 鍵で署名する場合は必ず SHA-1 を使い，
+検証時にも DSA 鍵での署名ならヘッダの内容に関らず SHA-1 が使われているものとして検証処理を行っているようです。
+従って，
+通常はメッセージ要約アルゴリズムとして MD5 を使うべきではありません。
+</p>
+
+<h3>その他の互換性に関する問題</h3>
+<p>
+<a href="http://www.gnupg.org/rfc2440-14.html">OpenPGP 「14. Implementation Nits」</a>
+には PGP との互換性に関する問題が書かれています。
+殆どはここに書かれている内容だったり内部実装に関する問題だったりしますが，
+読んでおいて損はないでしょう。
+</p>
+
+
+<h2>セキュリティについて</h2>
+<p>
+GnuPG を利用する際のセキュリティの問題についていくつか述べておきます。
+主に PGP/GnuPG を業務で使用する際の話です。
+PGP/GnuPG を個人レベルでのみ利用する場合には，
+ここまで厳密に考えなくてもいいかもしれません。
+</p>
+
+<h3>ADKについて</h3>
+<p>
+先日，セキュリティホールが発覚して話題になった ADK (Additional Decryption Key) ですが，
+GnuPG 自身には ADK の機能はありません。
+しかし自分の公開鍵を鍵サーバに公開している場合は注意が必要です。
+定期的に自分の公開鍵をダウンロードしてチェックする必要があるかもしれません。
+ADK のセキュリティホールについては
+<a href="http://www.cert.org/advisories/CA-2000-18.html">CERT Advisory CA-2000-18</a>
+(<a href="http://www.lac.co.jp/security/information/CERT/CA-2000_18.html">日本語訳</a>)
+や
+<a href="http://www.pgp.com/other/advisories/adk.asp">Network Associates, Inc. の情報</a>
+(<a href="http://www.nai.com/japan/pgp/guidance000828.asp">日本語版</a>)
+などを参考にして下さい。
+</p><p>
+PGP/GnuPG の公開鍵配布についての信用モデルは
+「信用の輪 (Web of trust)」
+と呼ばれています。
+これは対等の個人対個人あるいは平等で閉じたコミュニティの中では有効に機能します。
+しかし
+「信用の輪」
+が有効に機能しない場合もあります。
+例えば「会社」対「従業員」などがそうです。
+ADK はこの問題を解決するための手段のひとつとして PGP に実装されています。
+</p><p>
+もし GnuPG を業務で使用しているなら，
+会社から鍵の預託
+(この言葉はイメージが悪いので最近は「鍵の復元」というらしいですが)
+を言い渡された場合には，
+ちょっと困ったことになるかもしれません。
+</p>
+
+<h3>秘密鍵の管理</h3>
+<p>
+あらためて言うまでもないことですが，
+秘密鍵の管理は厳密に行うべきです。
+相手がたとえ上司や親，あるいは自分の大切なパートナーであっても秘密鍵のありかを明かすべきではありません。
+しかし，相手が自分と対等な関係でない場合はそうもいかないかもしれません。
+(この点に関しては前述したとおりです)
+</p><p>
+私が PGP を使いだした頃，
+BBS などでよくこのようなことを言われました。
+</p><blockquote>
+「秘密鍵は分散させずに1つに纏め，その鍵に複数の鍵IDを設定したほうがよい。」
+</blockquote><p>
+はたして本当にそうでしょうか。
+GnuPG を業務で使用している場合は，
+前述したような鍵の預託を言い渡されるかもしれません。
+その場合，
+プライベートな鍵まで会社に知られてしまうことにならないでしょうか。
+</p><p>
+私としては，
+相手や目的によって複数の鍵を使い分け，
+それぞれの鍵ごとに異なる管理レベルを設定する方が合理的と考えます。
+</p>
+
+<h3><a name="bcc">Bcc の取り扱い</a></h3>
+<p>
+通常のメール配信では Bcc で指定したメールアドレスは，
+他の To, Cc, Bcc アドレスのユーザに知らされないようになっています。
+しかし，暗号化パケットからユーザIDの一覧を取り出すことが可能なため
+(GnuPG では <kbd>--list-packet</kbd> コマンドで簡単に見ることができます)，
+Bcc アドレスの公開鍵で暗号化してしまうと，
+他の To, Cc, Bcc アドレスのユーザにそのユーザの存在が知られてしまうことになります。
+このことは，特に業務で暗号化メールを使用する場合に問題となります。
+</p><p>
+BkGnuPG では
+<a href="index.html#SettingDlg">設定ダイアログ</a>の
+「Bcc のアドレスユーザの公開鍵でも暗号化する」
+オプションを非推奨としています。
+この項目をチェックする場合には上述した問題を意識して，
+慎重に取り扱うようにして下さい。
+</p><p>
+なお，
+受信者が全て GnuPG ユーザであるとあらかじめ分かったいる場合には
+<a href="index.html#SettingDlg">設定ダイアログ</a>の
+「受信者を匿名にする」
+をチェック (<kbd>--throw-keyid</kbd> オプションを使用) すると受信者の鍵IDを隠蔽することができます。
+その場合でも受信者の人数を隠蔽することはできません。
+</p><p>
+この問題に関しては
+<a href="http://www.cla-ri.net/pgp/">PGP User's Manual for Windows</a>
+の
+「PGPとメーラーのBccについての問題」
+のページが参考になります。
+是非ご一読ください。
+</p>
+
+<h3>その他セキュリティに関すること</h3>
+<p>
+<a href="http://www.gnupg.org/rfc2440-13.html">OpenPGP 「13. Security Considerations」</a>
+には PGP/GnuPG を利用する上で考えるべきセキュリティの問題が列挙されています。
+ここで書かれている内容と重なる部分もありますが，
+一度は読んでおいたほうがよいでしょう。
+</p>
+
+
+<h2><a name="optfile">options ファイルについて</a></h2>
+<p>
+GnuPG ではデフォルトのオプションを options ファイルに記述しておくことができます。
+(options ファイルは GnuPG のホームディレクトリに置きます)
+options ファイルを使えば BkGnuPG で設定できないオプションも指定できます。
+特別な暗号アルゴリズムを使用する場合や
+鍵束ファイルを特殊なディレクトリにおいている
+(例えば公開鍵の鍵束ファイルを共有ディレクトリで公開している)
+場合などに利用できると思います。
+</p><p>
+ただし，
+BkGnuPG では options ファイルをチェックしません。
+したがって BkGnuPG の設定と矛盾するオプションが options ファイルに記述されている
+(例えば BkGnuPG で「PGP互換」となっているのに options ファイルで openpgp オプションが指定されている)
+と，
+予期しない結果になる場合があります。
+この点は，あらかじめご了承ください。
+</p>
+
+
+<h2>参考文献</h2>
+<p>
+BkGnuPG 制作の際以下のWWWページや書籍を参考にしました。
+BkGnuPG ご利用の際にもきっと役に立つと思います。
+また，
+このような素晴らしいソフトウェアや有用な情報を公開してくださっている方々に心より感謝します。
+</p>
+<ul>
+<li><a href="http://www.rimarts.co.jp/becky-j.htm">Becky! Version 2</a>
+<li><a href="http://mao.udn.ne.jp/b2pin/">B2 Plug-in Forum</a>
+<li><a href="http://www.gnupg.org/">The GNU Privacy Guard</a>
+<li><a href="http://hp.vector.co.jp/authors/VA019487/">GNU Privacy Gard 講座</a>
+<li><a href="http://www.yukaura.com/gnupg-becky/index.html">Becky! で GnuPG を使う</a>
+<li><a href="http://pgp.iijlab.net/">(仮)日本の公式 PGP ホームページ</a>
+<li><a href="http://www.cla-ri.net/pgp/">PGP User's Manual for Windows</a> (充実した内容です)
+<li><a href="http://www.oreilly.co.jp/BOOK/pgp/">『PGP 暗号メールと電子署名』</a> ISBN4-900900-02-8
+<li><a href="http://www.rfc-editor.org/rfc/rfc2015.txt">PGP/MIME (RFC2015)</a>
+<li><a href="http://www.imasy.or.jp/~yotti/rfc.html#rfc2015">PGP/MIME (RFC2015) の日本語訳</a>
+<li><a href="http://www.gnupg.org/rfc2440.html">OpenPGP (RFC2440)</a>
+<li><a href="http://www.gnupg.org/rfc2440-ja.html">OpenPGP (RFC2440) の日本語訳</a>
+</ul>
+
+
+<hr> <!-- 問い合わせ先 -->
+<div align="right">
+このページについてのお問い合わせは
+<a href="mailto:spiegel@alles.or.jp"><kbd>spiegel@alles.or.jp</kbd></a>
+まで
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+; BkGnuPG.ini
+;
+; [Settings] section
+;    CmdName            Command name (path), default: registory value or gpg.exe
+;                        (Write in the INI file directly)
+;    DefUserID          Default user ID, default: null
+;    PGPMIME            PGP/MIME enable(=1), default: 1
+;    PGPCompatible      PGP compatible enable(=1), default: 1
+;    OpenPGP            OpenPGP behavior(=1), default: 0
+;    AnonymousRecipient Anonymous recipient(=1), default: 0
+;    RFC1991            RFC1991 compliant(=1), default: 0
+;    UseMD5             use message digest algorithm MD5(=1), default: 0
+;    EnableCcUser       "Cc" users are included to recipients(=1), default: 0
+;    EnableBccUser      "Bcc" users are included to recipients(=1), default: 0
+;    EnableFromUser     "From" users are included to recipients(=1), default: 0
+;    EnableDefUser      Default user is included to recipients(=1), default: 0
+;    EnableTextModeSig  PGP/MIME signiture by text mode(=1), default: 0
+;    ShowPassphrase     Show passphrese(=1), default: 0
+;    MDalgo             use message digest algorithm, default: SHA1
+;                       (if "UseMD5" value is 0)
+[Settings]
+CmdName=gpg.exe
+DefUserID=
+PGPMIME=1
+PGPCompatible=1
+OpenPGP=0
+AnonymousRecipient=0
+RFC1991=0
+UseMD5=0
+EnableCcUser=0
+EnableBccUser=0
+EnableFromUser=0
+EnableDefUser=0
+EnableTextModeSig=0
+ShowPassphrase=0
+
+; [Output] section
+;    Charset             Character set of "Output" window (Japanese only)
+;                        (Write in the INI file directly)
+;                             iso-2022-jp    :  ISO-2022-JP (JIS)
+;                             euc-jp         :  EUC-JP
+;                             utf-8          :  UTF-8
+;                             null (default) :  Shift-JIS
+[Output]
+Charset=
+
+; [Debug] section
+;    LogFile            Enable log file(=1), default: 0
+;                        (Write in the INI file directly)
+;                        It makes the file called BkGnuPG.log
+;                        for the folder that has an INI file.
+;                        Please turn off the ordinariness.
+[Debug]
+LogFile=0

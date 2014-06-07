@@ -1,0 +1,55 @@
+; BkGnuPG INIファイル
+;
+; [Settings] セクション
+;    CmdName            コマンド名(パス名) デフォルトはレジストリ値また
+;                       は gpg.exe
+;                        ※ INIファイルに直接記述して下さい
+;    DefUserID          デフォルトユーザID デフォルトは無指定
+;    PGPMIME            PGP/MIME 指定(=1) デフォルトは 1
+;    PGPCompatible      PGP 互換指定(=1) デフォルトは 1
+;    OpenPGP            OpenPGP 準拠(=1) デフォルトは 0
+;    AnonymousRecipient 受信者を匿名にする(=1) デフォルトは 0
+;    RFC1991            RFC1991 に従う(=1) デフォルトは 0
+;    UseMD5             メッセージ要約アルゴリズムに MD5 を使う(=1) デフォルトは 0
+;    EnableCcUser       受信者に Cc ユーザを含める(=1) デフォルトは 0
+;    EnableBccUser      受信者に Bcc ユーザを含める(=1) デフォルトは 0
+;    EnableFromUser     受信者に From ユーザを含める(=1) デフォルトは 0
+;    EnableDefUser      受信者にデフォルトユーザを含める(=1) デフォルトは 0
+;    EnableTextModeSig  テキストモードで分離署名を行う(=1) デフォルトは 0
+;    ShowPassphrase     入力パスフレーズを表示する(=1) デフォルトは 0
+;    MDalgo             署名に使うメッセージ要約アルゴリズム デフォルトは SHA1
+;                        ※ UseMD5=0 の場合にのみ有効
+[Settings]
+CmdName=gpg.exe
+DefUserID=
+PGPMIME=1
+PGPCompatible=1
+OpenPGP=0
+AnonymousRecipient=0
+RFC1991=0
+UseMD5=0
+EnableCcUser=0
+EnableBccUser=0
+EnableFromUser=0
+EnableDefUser=0
+EnableTextModeSig=0
+ShowPassphrase=0
+
+; [Output] セクション
+;    Charset            結果表示ウィンドウのキャラクタセットを指定する
+;                        ※ INIファイルに直接記述して下さい
+;                             iso-2022-jp       :  ISO-2022-JP (JIS)
+;                             euc-jp            :  EUC-JP
+;                             utf-8             :  UTF-8
+;                             無指定(デフォルト):  Shift-JIS
+[Output]
+Charset=
+
+; [Debug] セクション
+;    LogFile            動作ログを出力する(=1) デフォルト 0
+;                        ※ INIファイルに直接記述して下さい
+;                        ※ INIファイルのあるディレクトリに BkGnuPG.log
+;                           というファイル名で動作ログを記録します。
+;                           通常は指定しないでください。
+[Debug]
+LogFile=0

@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+<meta http-equiv="Keywords" content="Spiegel, Free Software, Becky! 2, Plug-in, GnuPG, BkGnuPG, Manual">
+<meta name="author" content="Yasuhiro ARAKAWA">
+<meta name="Description" content="GNU Privacy Guard Plug-in for Becky! 2">
+<link rev="made" href="mailto:spiegel@alles.or.jp">
+<link rel="contents" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html">
+<link rel="next" href="tips.hrml">
+<link rel="prev" href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html">
+<title>Manual - GNU Privacy Guard Plug-in for Becky! 2</title>
+</head>
+
+
+<body bgcolor="#ffffdd" text="#000000" link="blue" alink="red" vlink="navy">
+<div>← <a href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html">Download</a> | <a href="tips.html">Tips</a> →</div>
+<hr>
+<div align="right">
+BkGnuPG Version 1.0.4<br>
+Copyright &copy; 2000-2003 <a href="mailto:spiegel@alles.or.jp">Yasuhiro ARAKAWA</a>
+</div>
+<h1 align="center">GNU Privacy Guard Plug-in for Becky! 2<br>ご利用の手引き</h1>
+<p align="center"><a href="index.html">Japanese</a> | <a href="index_en.html">English</a></p>
+
+
+<h2>「GNU Privacy Guard Plug-in for Becky! 2」とは</h2>
+<p>
+本ソフトウェア (BkGnuPG) は，
+<a href="http://www.rimarts.co.jp/becky-j.htm">Becky! Internet Mail Ver.2</a> (B2)
+<a href="http://www.rimarts.co.jp/becky-j.htm">Becky! Internet Mail Ver.2</a> (B2)
+上で動作するプラグイン・ソフトウェアで，
+Win32版 <a href="http://www.gnupg.org/">GNU Privacy Guard</a> (GnuPG)
+を使ってメールメッセージの署名・暗号化を行います。
+また
+<a href="http://www.pgpi.org/">Pretty Good Privacy</a> (PGP)
+あるいは GnuPG により署名・暗号化されたメールを検証・復号化することもできます。
+</p><p>
+メールの暗号化を行うプラグインとしては，
+B2 に標準で同梱されている
+「Becky! PGP プラグイン (BkPGP)」
+がありますが，
+このソフトウェアとほぼ同等の機能を GnuPG を使って実現し，
+更に GnuPG 特有の機能にいくつか対応しています。
+</p><p>
+BkGnuPG はフリーソフトウェアです。
+BkGnuPG についての権利や，
+ご利用の際の制限事項などについては，
+パッケージに同梱されている BkGnuPG\readme_sjis.txt を参照して下さい。
+また，
+BkGnuPG を使用する際のコツや細かい問題点については
+<a href="tips.html">「Tips - 暗号化メール利用のコツ」</a>
+を参照して下さい。
+</p>
+
+
+<h2>動作条件</h2>
+<p>
+B2 および Win32版 GnuPG が動作する環境 (Windows 95/98/Me/NT4.0/2000) であれば大丈夫と思いますが，
+開発環境の問題で以下のプラットフォームでのみ動作確認を行っています。
+</p><ul>
+<li>Windows NT Service Pack 6a (日本語版)
+<li>Windows 2000 Professional Service Pack 1 (日本語版)
+</ul><p>
+上記以外のプラットフォームでうまく動作しない場合は，
+状況
+(OSやアプリケーションのの種類・バージョン，エラーの詳細など)
+をできるだけ詳しくレポートしていただけると助かります。
+連絡先については
+<a href="#support">「サポートについて」</a>
+を参照して下さい。
+</p>
+
+
+<h2>インストールとアンインストール</h2>
+<p>
+まず最初に，
+B2 および GnuPG のインストールが完了していることを確認して下さい。
+特に GnuPG については，
+</p><ul>
+<li>実行モジュール (gpg.exe) のあるフォルダにパスを通す
+<li>GnuPG ホームディレクトリ (レジストリで指定) を設定する
+</ul><p>
+ことをお薦めします。
+これらの設定方法については，
+GnuPG に同梱されている README.W32 ファイルをご覧ください。
+</p><p>
+次に以下の場所から BkGnuPG の最新版をダウンロードして下さい。
+</p><blockquote>
+BkGnuPG ダウンロードページ：
+<a href="http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html">http://hp.vector.co.jp/authors/VA023900/gpg-pin/index.html</a>
+</blockquote><p>
+ダウンロードしたファイルを解凍すると以下のファイルが取り出せます。
+</p><ul>
+<li>BkGnuPG ロードモジュール (BkGnuPG.dll)
+<li>BkGnuPG ソースファイル (zip圧縮)
+<li>簡易マニュアル (BkGnuPG\readme_sjis.txt, BkGnuPG\readme_en.txt)
+<li>マニュアル (このファイル)
+</ul><p>
+BkGnuPG をインストールするには，
+上記ファイルのうち BkGnuPG ロードモジュール (BkGnuPG.dll) を B2 インストールフォルダまたはデータフォルダ直下の
+「PlugIns」
+フォルダに置きます。<br>
+例えば B2 を
+「C:\Program Files\RimArts\」
+にインストールし，
+データフォルダを
+「C:\Becky!\Spiegel\」
+に設定しているとすれば，
+「C:\Program Files\RimArts\B2\PlugIns\」 または 「C:\Becky!\Spiegel\PlugIns\」
+のいずれかのフォルダに置くことになります。
+(ちなみに両方のフォルダにインストールすると，
+BkGnuPG が2つ立ち上がってしまいます)<br>
+なお，
+以上の操作は B2 が動作していない状態で行って下さい。
+</p><p>
+アンインストールは，
+コピーしたDLLファイルを削除すれば完了です。
+BkGnuPG.ini があればこれも削除します。
+BkGnuPG 自身はレジストリを汚しません。
+(BkGnuPG.ini の置き場所については
+<a href="#inifile">「INIファイル仕様」</a>
+の章を参照して下さい)
+</p>
+
+
+<h2>機能説明</h2>
+
+<h3><a name="SettingDlg">設定ダイアログ</a></h3>
+<p>
+インストールが完了したら B2 を起動して下さい。
+はじめてインストールした場合には BkGnuPG を登録するか確認してくるかもしれません。
+正しくインストールが完了していればツールメニューから
+<kbd>[ツール(T)] → [プラグインの設定(U)] → [GNU Privacy Guard Plug-in]</kbd>
+と辿って設定ダイアログを開くことができます。
+まず設定ダイアログで必要な設定を行って下さい。
+</p>
+<div align="center"><img src="settingdlg.png" width="382" height="324" alt="設定ダイアログ画面"></div>
+<p>
+設定ダイアログの設定項目は以下のとおりです。
+</p><dl>
+<dt><strong>デフォルトユーザID</strong></dt>
+<dd>
+秘密鍵が複数ある場合のデフォルトのIDを設定します。
+</dd>
+<dt><strong>PGP 互換の署名・暗号化を行う</strong></dt>
+<dd>
+PGP互換のフォーマットで署名・暗号化を行います。
+この項目をチェックしておかないと，特にPGPによる署名検証に失敗する場合があります。
+GnuPG と PGP との互換性については Tips の
+<a href="tips.html#compatible">「GnuPG と PGP の互換性」</a>
+の章を参照して下さい。
+</dd>
+<dt><strong>RFC1991 (PGP 2.6.x) に従う</strong></dt>
+<dd>
+PGP 2.6.x の規格 (<a href="http://www.rfc-editor.org/rfc/rfc1991.txt">RFC1991</a>) で署名・暗号化を行います。
+「PGP 互換の署名・暗号化を行う」をチェックしてもうまくいかない場合に，
+この項目も併せてチェックしてみて下さい。
+</dd>
+<dt><strong>OpenPGP に準拠した署名・暗号化を行う</strong></dt>
+<dd>
+OpenPGP (<a href="http://www.gnupg.org/rfc2440.html">RFC2440</a>) に準拠した署名・暗号化処理を行います。
+「PGP 互換の署名・暗号化を行う」および「RFC1991 (PGP 2.6.x) に従う」の各項目と同時に設定できません。
+この項目をチェックすると，
+PGPで復号化・検証できない場合があります。
+</dd>
+<dt><strong>受信者を匿名にする</strong></dt>
+<dd>
+通常，署名・暗号化したパケットには受信者の鍵IDが含まれていて受信者はその一覧を見ることができます。
+この項目をチェックすると受信者情報を隠蔽できます。
+(ただし，この項目をチェックしても受信者の人数は隠蔽できません)
+「PGP 互換の署名・暗号化を行う」および「RFC1991 (PGP 2.6.x) に従う」の各項目と同時に設定できません。
+</dd>
+<dt><strong>PGP/MIME (RFC2015) を使用して送信メッセージを作成</strong></dt>
+<dd>
+PGP/MIME (<a href="http://www.rfc-editor.org/rfc/rfc2015.txt">RFC2015</a>) フォーマットで送信メッセージを作成します。
+</dd>
+<dt><strong>メッセージ要約アルゴリズムに MD5 を使う</strong></dt>
+<dd>
+この項目をチェックすると署名に使うメッセージ要約アルゴリズムを MD5 にします。
+チェックしない場合 (デフォルト) は SHA-1 を使います。
+「OpenPGP に準拠した署名・暗号化を行う」の項目と同時に設定できません。
+この項目は <a href="tips.html#md5">「非推奨」</a> です。
+</dd>
+<dt><strong>Cc のアドレスユーザの公開鍵でも暗号化する</strong></dt>
+<dd>
+暗号化する際の受信者リストに，宛先 (To) のアドレスの他に Cc のアドレスも追加します。
+</dd>
+<dt><strong>Bcc のアドレスユーザの公開鍵でも暗号化する</strong></dt>
+<dd>
+暗号化する際の受信者リストに，宛先 (To) のアドレスの他に Bcc のアドレスも追加します。
+この項目は <a href="tips.html#bcc">「非推奨」</a> です。
+</dd>
+<dt><strong>From のアドレスユーザの公開鍵でも暗号化する</strong></dt>
+<dd>
+暗号化する際の受信者リストに，宛先 (To) のアドレスの他に 差出人 (From) のアドレスも追加します。
+</dd>
+<dt><strong>デフォルトユーザの公開鍵でも暗号化する</strong></dt>
+<dd>
+暗号化する際の受信者リストに，宛先 (To) のアドレスの他にデフォルトユーザID (このダイアログで設定したもの) も追加します。
+</dd>
+</dl><p>
+<kbd>[OK]</kbd>
+ボタンを押すと変更内容が反映され，
+設定情報を <a href="#inifile">INIファイル</a> に書き込みます。
+</p>
+
+<h3>メールの暗号化</h3>
+<p>
+作成したメールを暗号化するには，
+メール作成ウィンドウで
+<kbd>[ツール(T)] → [GnuPG: 暗号化...]</kbd>
+を選択して下さい。
+受信者選択ダイアログが起動します。
+</p>
+<div align="center"><img src="rusersdlg.png" width="564" height="152" alt="受信者選択ダイアログ画面"></div>
+<p>
+受信者選択ダイアログにはあらかじめ宛先 (To) に設定されたメールアドレスがリストアップされています。
+<a href="#SettingDlg">設定ダイアログ</a>で
+「Cc のアドレスユーザの公開鍵でも暗号化する」
+などの項目がチェックされている場合は，
+該当するフィールドに設定されているメールアドレスもリストアップされています。
+</p><p>
+このダイアログで受信者のリストを編集して
+<kbd>[OK]</kbd>
+ボタンを押します。
+操作を中止する場合は
+<kbd>[キャンセル]</kbd>
+ボタンを押してください。
+</p><p>
+<kbd>[設定...]</kbd>
+ボタンを押すと<a href="#SettingDlg">設定ダイアログ</a>が起動します。
+ここで設定を変更することができます。
+ただし，ここで変更した内容は一時的なもので，
+<a href="#inifile">INIファイル</a> に反映されません。
+</p><p>
+暗号化処理が終わると結果が表示され，処理が成功すればメール作成ウィンドウの内容が暗号化されます。
+</p>
+
+<h3>メールの署名</h3>
+<p>
+作成したメールに署名するには，
+メール作成ウィンドウで
+<kbd>[ツール(T)] → [GnuPG: 署名...]</kbd>
+を選択して下さい。
+パスフレーズ入力ダイアログが起動します。
+</p>
+<div align="center"><img src="passphrasedlg.png" width="556" height="138" alt="パスフレーズ入力ダイアログ画面"></div>
+<p>
+署名するユーザには From のアドレスがリストアップされています。
+署名ユーザは変更することができます。
+</p><p>
+署名ユーザに対応するパスフレーズを入力して
+<kbd>[OK]</kbd>
+ボタンを押してください。
+操作を中止する場合は
+<kbd>[キャンセル]</kbd>
+ボタンを押します。
+</p><p>
+<kbd>[設定...]</kbd>
+ボタンを押すと<a href="#SettingDlg">設定ダイアログ</a>が起動します。
+ここで設定を変更することができます。
+ただし，ここで変更した内容は一時的なもので，
+<a href="#inifile">INIファイル</a> に反映されません。
+</p><p>
+パスフレーズ入力ダイアログの設定項目は以下のとおりです。
+</p><dl>
+<dt><strong>パスフレーズ表示</strong></dt>
+<dd>
+パスフレーズの入力内容を表示します。
+</dd>
+<dt><strong>エージェント使用</strong></dt>
+<dd>
+--use-agent オプションを用い GPG Agent を使ってパスフレーズ管理を行います。
+<a href="http://winpt.sourceforge.net/">WinPT</a> Tray に同梱されている gpg-agent.exe と組み合わせて使用します。
+</dd>
+</dl><p>
+署名処理が終わると結果が表示され，処理が成功すれば署名情報が付加されます。
+</p>
+
+<h3>メールの署名・暗号化</h3>
+<p>
+メールの署名と暗号化を一度に行うことができます。
+メール作成ウィンドウで
+<kbd>[ツール(T)] → [GnuPG: 署名と暗号化...]</kbd>
+を選択して下さい。
+受信者の指定とパスフレーズの入力のダイアログが続けて起動します。
+処理が終わると結果が表示され，成功すればメール作成ウィンドウに内容が反映されます。
+</p>
+
+<h3>公開鍵の添付</h3>
+<p>
+メールに自分の公開鍵を添付することができます。
+メール作成ウィンドウで
+<kbd>[ツール(T)] → [GnuPG: 公開鍵の添付...]</kbd>
+を選択して下さい。
+処理が終わると結果が表示され，成功すれば公開鍵が添付されます。
+</p>
+
+<h3>受信メールの復号化と署名検証</h3>
+<p>
+リストビューで署名または暗号化されたメールを選択し
+<kbd>[ツール(T)] → [GnuPG: 復号化と検証...]</kbd>
+を選択
+(または，リストビューから該当するメールを右クリックしてコンテストメニューを開き，
+<kbd>[GnuPG: 復号化と検証...]</kbd>
+を選択)
+して下さい。
+復号化を行う場合にはパスフレーズの入力を求めるダイアログが表示されます。
+</p>
+<div align="center"><img src="passphrasedlg2.png" width="556" height="138" alt="パスフレーズ入力ダイアログ画面 (復号化時)"></div>
+<p>
+処理が終わると結果が表示され，成功すれば内容が反映されます。
+</p>
+
+
+<H2><a name="support">サポートについて</a></H2>
+<p>
+BkGnuPG についてのご意見・ご要望・お叱り等はメール
+(<A HREF="mailto:spiegel@alles.or.jp"><KBD>spiegel@alles.or.jp</KBD></A>)
+でお願いします。
+なお，現在
+Becky! Ver.2 メーリングリスト (<a href="http://www.rimarts.co.jp/becky-j.htm">Becky! Version 2 Beta</a>)
+および
+<a href="http://www.246.ne.jp/~mnakan/becky/plugin/">Becky! Ver.2 Plug-in ML</a> (Plug-in 開発者用のML)
+に参加しています。
+こちらのほうにポストしていただいても構いません。
+(情報はみんなで共有すると幸せです)
+</p>
+
+
+<h2>(ちょっとだけ) 高度な使い方</h2>
+
+<h3>設定ダイアログの設定項目と GnuPG のオプションとの対応</h3>
+<p>
+<a href="#SettingDlg">設定ダイアログ</a>の設定項目と GnuPG のオプションとの対応を以下に示します。
+</p><table>
+<tr><td align="right"><kbd>--default-key</kbd></td><td>：</td><td>デフォルトユーザID</td></tr>
+<tr><td align="right"><kbd>--force-v3-sigs</kbd></td><td>：</td><td>PGP 互換の署名・暗号化を行う</td></tr>
+<tr><td align="right"><kbd>--rfc1991</kbd></td><td>：</td><td>RFC1991 (PGP 2.6.x) に従う</td></tr>
+<tr><td align="right"><kbd>--openpgp</kbd></td><td>：</td><td>OpenPGP に準拠した署名・暗号化を行う</td></tr>
+<tr><td align="right"><kbd>--throw-keyid</kbd></td><td>：</td><td>受信者を匿名にする</td></tr>
+<tr><td align="right"><kbd>--digest-algo MD5</kbd></td><td>：</td><td>メッセージ要約アルゴリズムにMD5を使用する</td></tr>
+</table><p>
+なお，デフォルトのメッセージ要約アルゴリズムは SHA-1 (<kbd>--digest-algo SHA1</kbd>) です。
+</p><p>
+ここで設定できない GnuPG のオプションは
+<a href="tips.html#optfile">options ファイル</a>
+で設定できます。
+</p>
+
+<h3><a name="inifile">INIファイル仕様</a></h3>
+<p>
+BkGnuPG の設定内容は全てINIファイル (BkGnuPG.ini) に格納されます。
+また，普段使わない機能で<a href="#SettingDlg">設定ダイアログ</a>で設定されない項目も，
+INIファイルに直接記述することで設定可能です。
+</p><p>
+INIファイルの仕様を
+<a href="bkgnupg_ini_sj.txt">bkgnupg_ini_sj.txt</a>
+にまとめました。
+参考にして下さい。
+(<a href="bkgnupg_ini_sj.txt">bkgnupg_ini_sj.txt</a>
+を BkGnuPG.ini にリネームして，そのままINIファイルとして使えます)
+</p><p>
+<a href="#SettingDlg">設定ダイアログ</a>で設定されない項目としては
+</p>
+<ul>
+<li>コマンド名 (パス名)
+<li><a href="#output-jp">結果表示ウィンドウのキャラクタセット</a>
+<li><a href="#log">動作ログ</a>
+</ul>
+<p>
+があります。
+</p><p>
+BkGnuPG は起動時に以下の順番でINIファイルを探します。
+</p><ol>
+<li>データフォルダ直下の「PlugIns」フォルダ
+<li>GnuPG ホームディレクトリ (レジストリで設定されている場合)
+<li>BkGnuPG の起動ディレクトリ
+</ol><p>
+上記のいずれにもINIファイルがない場合には，
+BkGnuPG の起動ディレクトリにINIファイルを置きます。
+ちなみに GnuPG ホームディレクトリの設定方法については，
+GnuPG に同梱されている README.W32 ファイルをご覧ください。
+</p><p>
+INIファイルを直接編集する場合は，
+必ず B2 が起動していないことを確認して下さい。
+BkGnuPG は起動時にのみINIファイルを参照します。
+B2 起動中にINIファイルを編集しても動作中の BkGnuPG には反映されません。
+</p>
+
+<h3><a name="output-jp">日本語表示について</a></h3>
+<p>
+GnuPG のパッケージには日本語化モジュール (ja.mo) が同梱されています。
+(日本語化モジュールのセットアップ方法については，
+GnuPG に同梱されている README.W32 ファイルをご覧ください)
+しかし，このファイルのメッセージは EUC-JP で記述されており，
+残念ながら Windows プラットフォームではうまく日本語になりません。
+<a href="http://homepage2.nifty.com/ayumemi/download.html">あゆめみさんのサイトにシフトJIS対応版</a>が公開されていますので，
+こちらのファイルを使ってください。
+また多少コンピュータに詳しい方なら自分で日本語化モジュールを作成することも可能です。
+詳しくは venona さんの
+<a href="http://venona.hp.infoseek.co.jp/gpg/mo.htm">「gnupg.mo シフト JIS版の作り方」</a>
+を参照してください。
+</p><p>
+以下に表示例を示します。
+</p>
+<div align="center"><img src="output_en.png" width="622" height="300" alt="復号化 &amp; 検証結果 (英語版)"></div>
+<div align="center">復号化 &amp; 検証結果 表示例： 英語版 (上) と 日本語版 (下)</div>
+<div align="center"><img src="output_jp.png" width="622" height="300" alt="復号化 &amp; 検証結果 (日本語版)"></div>
+
+<h3><a name="log">動作ログ</a></h3>
+<p>
+BkGnuPG では動作ログを取ることができます。
+(<a href="#inifile">INIファイル</a>で指定します)
+動作ログには GnuPG起動時のコマンドラインやエラー発生時の簡単な情報が書き込まれます。
+BkGnuPG をお使いになって何か障害が発生した際に作者との連絡用に利用していただければ幸いです。
+なお，ログ情報は際限なく溜め込まれていきますので，
+通常はオフにしておいて下さい。
+</p>
+
+
+<hr> <!-- 問い合わせ先 -->
+<div align="right">
+このページについてのお問い合わせは
+<a href="mailto:spiegel@alles.or.jp"><kbd>spiegel@alles.or.jp</kbd></a>
+まで
+</div>
+</body>
+</html>
