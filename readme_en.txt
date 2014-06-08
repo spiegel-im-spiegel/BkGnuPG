@@ -62,47 +62,6 @@ Installation and uninstallation method
   copied.  Please delete even this, if there is BkGnuPG.ini.  
 
 
-Copyright
-
-  BkGnuPG is free software and Yasuhiro ARAKAWA has the copyright.
-  There is not restriction about that uses this software, although
-  the copyright does not abandon it.  Please do so that the copyright
-  of an original source code is displayed regarding the application,
-  although it is similar regarding the source code of the same pack.
-
-  I request it in the condition of an original archive, in the case that
-  you distribute BkGnuPG.  Also please do not demand the money over the
-  actual expenses in the case that you distribute it.
-
-  Please do not rewrite the copyright information of the program.
-
-  I shall not carry, without being related the responsibility to the
-  damage that BkGnuPG occurs by, use or becoming and using impossible
-  as if be incidental BkGnuPG or be inevitable, or be indirect or that
-  is direct.  Even in the case that it was told by the author in the
-  advance about the possibility of the damage it is similar.
-
-
-Distribution and address
-
-  I am distributing the latest version of BkGnuPG with the following URL.
-
-     http://hp.vector.co.jp/authors/VA023900/gpg-pin/
-
-  Please contact  The author of the plug-in at the following  e-mail
-  address:
-
-     mailto:spiegel@alles.or.jp
-
-  Although I am not able to respond to all requests, I shall do my best,
-  but as English is not might first language, there may be some delay.
-  Please forgive me in advance.
-
-  I do not can accept to the ask with regard to B2 and GnuPG.  Also
-  please do not do the ask with regard to BkGnuPG to the development of
-  B2 and GnuPG.
-
-
 Changelog
 
   November 12, 2004 Verion 1.0.5b2
